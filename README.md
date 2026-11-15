@@ -1,6 +1,6 @@
 # Browser Core — a browser for AI agents, under your control
 
-**Automate your own Chrome or Linux VPS through ChatGPT/MCP. If your browser is unavailable, use limited Hosted Cloud as a fallback. Step in for passwords, CAPTCHA and 2FA, then let the agent continue.**
+**Automate your own Chrome or Linux VPS through ChatGPT/MCP. Or choose limited Hosted Cloud without installing a worker. Step in for passwords, CAPTCHA and 2FA, then let the agent continue.**
 
 **Status: free public beta, version 0.8.0.** No payment or manual invitation required. Hosted Cloud has **two** concurrent slots and ephemeral **30-minute** sessions (maximum 120 minutes per account daily).
 
@@ -24,7 +24,7 @@
 | Concurrent capacity | Your device | Your VPS | Two global slots; one per account |
 | Price in free beta | Own hardware | Own VPS | Free: 30 min / session, 120 min / day |
 
-**Use Local Chrome when the work depends on your existing browser login.** Your own VPS is an independent remote option; Hosted Cloud is an installation-free **backup**, not our preferred mode for authenticated websites. Remote live view is for brief human login or correction, not comfortable full-time browsing.
+**Use Local Chrome when the work depends on your existing browser login.** Your own VPS is an independent remote option; Hosted Cloud is an installation-free **third execution mode**, with only two simultaneous free beta slots and ephemeral login state. Remote live view is for brief human login or correction, not comfortable full-time browsing.
 
 ## Start in ChatGPT
 
@@ -69,3 +69,5 @@ Compare alternatives: docs/alternatives.md
 - [Terms](https://browser.m2g.pro/terms)
 
 **Payments remain disabled.** YooKassa product approval is pending and Digiseller seller setup is incomplete. Never purchase Browser Core beta codes from third parties.
+
+- Cloud scalability: [capacity and queue design](docs/cloud-scaling.md)
