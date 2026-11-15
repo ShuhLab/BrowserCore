@@ -9,3 +9,9 @@
 - Persistent encrypted worker profiles
 
 Known: unsigned/notarized Mac app, Python prerequisite, manual extension installation, invite-only access, zero hosted commercial Cloud slots.
+
+## Public Local/BYO onboarding — 2026-11-15
+- Verified Telegram self-service OAuth without operator invitations
+- 10-language website with sourced competitor comparisons
+- Anonymous website view and CTA counters, IndexNow submission
+- Hosted Cloud and merchant checkout remain disabled pending verification

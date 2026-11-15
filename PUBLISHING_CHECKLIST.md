@@ -15,3 +15,8 @@
 - [ ] Hosted Cloud safety/scale, signed installers and payment after separate audits
 
 Note: placing server.json in a repository is NOT publishing to the official MCP registry.
+
+- [x] Public Local/BYO OAuth signup through Telegram bot, with per-account identities and rate limits tested
+- [x] Multilingual website (10 languages), sitemap, hreflang and IndexNow batch accepted (HTTP 202)
+- [x] First-party aggregate pageview and CTA counters, without IP, cookie or referrer logging
+- [ ] Hosted Cloud production isolation, tenant resource accounting and checkout activation pending

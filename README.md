@@ -4,7 +4,7 @@
 
 Browser Core is an MCP-connected browser automation service by Shuh Lab. It opens pages, reads accessible controls, clicks, fills forms, extracts information, takes screenshots and saves encrypted browser profiles. When a login requires a password, CAPTCHA, 2FA or OAuth approval, the agent pauses for a user to briefly take control of that same session, then resumes.
 
-**Status: free, invitation-only beta. Not a public paid cloud product.**
+**Status: free public Local/BYO beta. Automated Telegram verification; Hosted Cloud is not public yet.**
 
 - Product website: https://browser.m2g.pro/
 - GitHub documentation: https://github.com/ShuhLab/BrowserCore
@@ -27,10 +27,10 @@ Browser Core is an MCP-connected browser automation service by Shuh Lab. It open
 
 ## Getting started
 
-1. Request an invitation via https://t.me/OpsTetherBot?start=browsercore .
-2. Connect the MCP endpoint using OAuth in a compatible client.
-3. Choose Local or BYO and pair a worker with a one-use code.
-4. On Chrome, grant the specific tab you want the agent to operate.
+1. Open https://t.me/OpsTetherBot?start=browsercore or send /browser to the bot. It issues a one-time OAuth code automatically; no manual operator invitation.
+2. Add the OAuth-enabled MCP endpoint https://m2g.pro/browser-core/mcp in ChatGPT.
+3. Enter your Telegram-issued code on the official Browser Core OAuth page. This code expires after 15 minutes and is single-use.
+4. Choose Local or BYO, pair the worker using a separate pairing code, and explicitly grant the Chrome tab to operate.
 5. Enter sensitive login details only in the real browser, never in chat.
 
 The current Mac installer is **unsigned, not notarized, and requires Python 3.10–3.13**. Chrome extension installation may require Developer Mode. Windows, Apple Silicon and large-scale commercial hosted Cloud are not yet release-certified.
@@ -59,4 +59,4 @@ See detailed, sourced product positioning in docs/alternatives.md.
 
 ## Distribution, access, and payment
 
-Invite-only beta access is free. Payment activation, online checkout and shared hosted Cloud capacity are disabled. This repo contains **documentation and release metadata only**; the service backend is proprietary, not open source.
+Free public beta access needs no manual invitation. Merchant checkout and shared Hosted Cloud are disabled pending security and provider approval. This repo contains **documentation and release metadata only**; the service backend is proprietary, not open source.

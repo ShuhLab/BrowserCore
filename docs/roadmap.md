@@ -1,6 +1,6 @@
 # Status
 
-Implemented in limited beta:
+Implemented in the free public Local/BYO beta:
 - Local worker and individually authorized existing Chrome tabs
 - Linux BYO worker, outbound WebSocket transport
 - MCP navigation, DOM snapshots, forms, screenshot, structured extraction
@@ -15,4 +15,4 @@ Not ready for general availability:
 - Independent security and sustained workload verification
 - Payments, subscriptions, refunds, and merchant compliance
 
-Payment providers will be considered after initial usage; no payment is required in the current beta.
+YooKassa merchant clarification is pending, Digiseller seller setup is incomplete. No payment is required in the current beta. Cloud remains off until account isolation and metering pass tests.
