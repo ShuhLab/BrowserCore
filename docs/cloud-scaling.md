@@ -12,18 +12,25 @@ account per day, and **two simultaneous Cloud browser slots**.
 
 Registrations are not a Cloud concurrency limit. 500 accounts can exist
 independently, but at most two can actively use hosted Chromium simultaneously.
-When the pool is full today, profile_create in cloud mode responds with a
-capacity error. There is **no durable waitlist, guaranteed start time or
-automatic node provisioning today**. Local and bring-your-own-server workers
-remain independent choices. Cloud profile storage is ephemeral, not persistent.
+When the two slots are busy, you can join the **durable FIFO waitlist**.
+There is no guaranteed start time, automatic browser launch or automatic
+node provisioning. Local/BYO remain independent choices and cloud profiles
+are ephemeral.
+
+**Queue tools:** cloud_queue_join creates one waiting entry per account
+(maximum 200); cloud_queue_status returns your own position and refreshes
+your heartbeat; cloud_queue_cancel removes the waiting entry. Poll at
+least every ten minutes. When ready, create a Cloud profile within
+120 seconds or the next eligible user may take the freed slot.
+No payment or guaranteed start time.
 
 ## Proposed scale-out design
 
 1. Separate the OAuth/MCP control plane from the browser worker fleet. It must
    never host untrusted client Chrome inside the same shared process.
-2. Add a durable, **bounded, owner-scoped admission queue** with visible queue
-   position, cancellation, lease expiry and fair per-account allocation.
-   Do not hold long HTTP/MCP tool calls open while waiting for minutes.
+2. **Completed:** durable, bounded, owner-scoped admission queue with
+   position, cancellation, ten-minute no-poll expiry, 120-second ready
+   claim and fair per-account FIFO allocation.
 3. Use a cluster scheduler on multiple dedicated worker nodes. Each run
    allocates a dedicated OS identity, storage, CPU/memory/pid quota and
    verified egress rules. Never expose other tenants' profiles, Docker sockets,
@@ -54,13 +61,15 @@ concurrent browsers.
 - Successful two-tenant and third-tenant-rejected end-to-end MCP test
 - Strict account-to-worker routing, auth expiration, revocation and teardown
 - SSRF and blocked private-network tests, cross-tenant attack suite
-- Queue fairness and load tests across multiple worker hosts
+- [Completed on this host] Queue fairness, anti-bypass and live two-worker tests
+- [Still required] Queue and load tests across multiple worker hosts
 - 24/7 worker monitoring, failure recovery and storage lifecycle controls
 - Actual resource-minute metering and enforcement of billing-free trial quotas
 - Signed installers and independent security review as appropriate
 
 **Beta status (15 Nov 2026):** two isolated slots and basic quota enforcement
-are implemented and tested; multi-node autoscaling, durable queue,
-commercial checkout and 500-way concurrency are **not implemented**.
+and a durable FIFO queue are implemented and tested. Multi-node
+autoscaling, automatic queue notifications, commercial checkout and
+500-way concurrency are **not implemented**.
 
 Project: https://browser.m2g.pro/
