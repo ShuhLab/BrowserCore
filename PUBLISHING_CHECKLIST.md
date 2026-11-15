@@ -7,8 +7,11 @@
 - [x] HTTPS certificate for browser.m2g.pro
 - [x] Public documentation repository ShuhLab/BrowserCore created
 - [ ] Self-service or staffed onboarding flow for initial users
-- [ ] Official MCP registry publishing and verification
-- [ ] Directories and OpenAI app review after publisher requirements are met
+- [x] Official MCP Registry published: io.github.ShuhLab/browser-core (v0.7.8)
+- [x] MCP.Directory submission confirmed 2026-11-15 (review pending, not listed yet)
+- [x] mcpservers.org free listing requested by email 2026-11-15 (approval pending)
+- [ ] Glama automatic import from official Registry, then claim verified listing
+- [ ] OpenAI Plugin Directory app review after publisher verification and reviewer account
 - [ ] Hosted Cloud safety/scale, signed installers and payment after separate audits
 
 Note: placing server.json in a repository is NOT publishing to the official MCP registry.
