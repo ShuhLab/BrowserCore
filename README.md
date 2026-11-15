@@ -2,7 +2,7 @@
 
 **Automate your own Chrome or Linux VPS through ChatGPT/MCP. Or choose limited Hosted Cloud without installing a worker. Step in for passwords, CAPTCHA and 2FA, then let the agent continue.**
 
-**Status: free public beta, version 0.8.0.** No payment or manual invitation required. Hosted Cloud has **two** concurrent slots and ephemeral **30-minute** sessions (maximum 120 minutes per account daily).
+**Status: free public beta, version 0.8.1.** No payment or manual invitation required. Hosted Cloud has **two** concurrent slots and ephemeral **30-minute** sessions (maximum 120 minutes per account daily).
 
 - Website: https://browser.m2g.pro/
 - OAuth-enabled MCP remote endpoint: https://m2g.pro/browser-core/mcp
@@ -36,7 +36,9 @@
 5. Ask the agent to browse. If a login needs you, intervene directly in the browser, never paste passwords into ChatGPT.
 6. When finished in Cloud, close the browser and use cloud_release to free the slot and erase temporary profile data.
 
-**Cloud is limited:** Only two slots exist. If busy, retry later or choose Local/BYO. Cloud cookies and login state are erased after the session; this is not permanent browser storage. There are no paid plans or automatic charges.
+**Free Cloud queue is live:** Two simultaneous slots. If both are busy, join the persistent FIFO waitlist with cloud_queue_join (up to 200 entries). Check your position with cloud_queue_status at least once every ten minutes. When ready, start a Cloud profile within 120 seconds. Use cloud_queue_cancel to leave the queue. There is no automatic browser start, guaranteed wait time, or purchased server capacity.
+
+Cloud cookies and login state are erased when the session is released. Paid plans and checkout remain disabled.
 
 The Mac beta is unsigned and not notarized; it requires Python 3.10–3.13. Linux has a user-scoped installer with SHA-256 integrity verification. No broad Windows, Apple Silicon or commercial SLA certification is claimed.
 
