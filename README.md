@@ -11,6 +11,10 @@ Browser Core is an MCP-connected browser automation service by Shuh Lab. It open
 - MCP endpoint: https://m2g.pro/browser-core/mcp (OAuth; invitation required)
 - Official MCP Registry: io.github.ShuhLab/browser-core — version 0.7.8
 - Mac 0.7.8 beta: https://browser.m2g.pro/downloads/BrowserCore-Mac-OneClick-0.7.8-beta.zip
+- Linux / VPS 0.7.8 beta: https://browser.m2g.pro/docs#linux (self-service installer and worker package)
+- Linux worker package: https://browser.m2g.pro/downloads/BrowserCore-Linux-BYO-0.7.8-beta.tar.gz
+- Linux installer: https://browser.m2g.pro/downloads/install-linux.sh
+
 - Support: https://t.me/OpsTetherBot?start=browsercore
 
 ## Current capabilities
@@ -33,7 +37,7 @@ Browser Core is an MCP-connected browser automation service by Shuh Lab. It open
 4. Choose Local or BYO, pair the worker using a separate pairing code, and explicitly grant the Chrome tab to operate.
 5. Enter sensitive login details only in the real browser, never in chat.
 
-The current Mac installer is **unsigned, not notarized, and requires Python 3.10–3.13**. Chrome extension installation may require Developer Mode. Windows, Apple Silicon and large-scale commercial hosted Cloud are not yet release-certified.
+The current Mac installer is **unsigned, not notarized, and requires Python 3.10–3.13**. On Linux, the separately documented self-service script runs under an ordinary account and validates the downloaded versioned worker package checksum. Chrome extension installation may require Developer Mode. Windows, Apple Silicon and large-scale commercial hosted Cloud are not yet release-certified.
 
 ## Why consider Browser Core?
 

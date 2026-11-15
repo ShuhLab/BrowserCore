@@ -20,3 +20,7 @@ Note: placing server.json in a repository is NOT publishing to the official MCP 
 - [x] Multilingual website (10 languages), sitemap, hreflang and IndexNow batch accepted (HTTP 202)
 - [x] First-party aggregate pageview and CTA counters, without IP, cookie or referrer logging
 - [ ] Hosted Cloud production isolation, tenant resource accounting and checkout activation pending
+
+- [x] Linux/BYO worker package published with SHA-256, installer and documentation; tested on owner's Linux QA
+- [x] Ten-language, 20-case responsive Chromium verification
+- [ ] Independent first-user Linux and Mac acceptance tests

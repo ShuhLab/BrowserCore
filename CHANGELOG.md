@@ -15,3 +15,8 @@ Known: unsigned/notarized Mac app, Python prerequisite, manual extension install
 - 10-language website with sourced competitor comparisons
 - Anonymous website view and CTA counters, IndexNow submission
 - Hosted Cloud and merchant checkout remain disabled pending verification
+
+## Public Linux worker and mobile QA — 2026-11-15
+- User-level Linux Local/BYO installer with pinned SHA-256 archive, Playwright browser smoke test and systemd --user service
+- Ten translated landing pages checked at 390px and 1280px widths (20 browser viewport cases); comparison table and RTL overflow fixed
+- Hosted Cloud and payment checkout remain unavailable pending isolation and merchant approval

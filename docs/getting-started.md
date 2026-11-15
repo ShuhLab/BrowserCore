@@ -15,6 +15,16 @@ Add the MCP endpoint https://m2g.pro/browser-core/mcp with OAuth in ChatGPT. Ent
 4. Open Chrome extensions and allow Browser Core for the specific tab.
 5. Keep your own Chrome window open when login, password, 2FA or CAPTCHA is needed.
 
+## Linux / own VPS (BYO)
+
+**Public self-service beta.** For supported Ubuntu and Debian versions with Python 3.10–3.13, get the script and review it locally before execution.
+
+Download: https://browser.m2g.pro/downloads/install-linux.sh
+
+The script runs as a normal user (never root); it verifies a pinned SHA-256 archive, installs pinned dependencies and Chromium, runs a local browser smoke test, accepts a separate one-time worker pairing code in the terminal, and configures a user-level systemd service. Browser Core credentials are not copied into ChatGPT messages.
+
+See https://browser.m2g.pro/docs#linux for the package checksum, supported operating systems and limitations.
+
 ## Your own Linux server
 The BYO worker runs Chromium on a personal Linux server with an authenticated outbound connection. A personal Linux BYO worker still requires installation and pairing. A public one-click Linux installer is not yet available; the initial BYO setup may require technical assistance.
 
