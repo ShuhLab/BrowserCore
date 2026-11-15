@@ -20,3 +20,9 @@ Known: unsigned/notarized Mac app, Python prerequisite, manual extension install
 - User-level Linux Local/BYO installer with pinned SHA-256 archive, Playwright browser smoke test and systemd --user service
 - Ten translated landing pages checked at 390px and 1280px widths (20 browser viewport cases); comparison table and RTL overflow fixed
 - Hosted Cloud and payment checkout remain unavailable pending isolation and merchant approval
+
+## Windows standalone preview — 15 November 2026
+- Experimental Windows standalone Chromium agent ZIP published with verified SHA-256
+- Microsoft Windows runner successfully completed real Chromium automation smoke test
+- No Windows native existing-Chrome-tab attachment, code signing, bundled Python or public auto-update yet
+- Cloud beta, Linux, Mac and MCP continue to work independently
