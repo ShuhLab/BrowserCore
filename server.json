@@ -2,12 +2,12 @@
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "io.github.ShuhLab/browser-core",
   "title": "Browser Core",
-  "description": "Local Chrome and BYO browser automation through MCP, with secure manual handoff.",
+  "description": "Local-first MCP browser automation: approved Chrome tabs or your VPS, manual handoff, and a limited Hosted Cloud fallback.",
   "repository": {
     "url": "https://github.com/ShuhLab/BrowserCore",
     "source": "github"
   },
-  "version": "0.7.8",
+  "version": "0.8.0",
   "remotes": [
     {
       "type": "streamable-http",
