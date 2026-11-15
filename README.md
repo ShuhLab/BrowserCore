@@ -9,6 +9,7 @@
 - Official MCP Registry: io.github.ShuhLab/browser-core
 - Mac beta 0.7.8: https://browser.m2g.pro/downloads/BrowserCore-Mac-OneClick-0.7.8-beta.zip
 - Linux/VPS beta 0.7.8: https://browser.m2g.pro/docs#linux
+- Windows standalone beta 0.8.0: https://browser.m2g.pro/docs#windows (CI-tested; unsigned, Python required, no existing Chrome tab access)
 - Free verification and support: https://t.me/OpsTetherBot?start=browsercore
 
 ## Choose where your browser runs
