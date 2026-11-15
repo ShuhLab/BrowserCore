@@ -31,3 +31,16 @@ The BYO worker runs Chromium on a personal Linux server with an authenticated ou
 Manual remote control is a temporary aid for login and verification, not a replacement for working in a normal local browser. Press Done to hand control back to the agent.
 
 Never send passwords, OTPs, cookies, API keys or recovery codes to ChatGPT messages or support.
+
+
+## Hosted Cloud waiting list
+
+The free Cloud has two isolated simultaneous browser slots. If both are busy,
+use cloud_queue_join in ChatGPT to enter the 200-place FIFO waitlist. Poll
+cloud_queue_status while you wait, at least every ten minutes. Once
+ready_to_claim is true, run profile_create with mode cloud within two minutes.
+Use cloud_queue_cancel to give up your place.
+
+After your browser task, call cloud_release to erase temporary profile data.
+The queue does not automatically start a browser, notify you via Telegram,
+purchase servers or guarantee a start time.
