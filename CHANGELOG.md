@@ -1,5 +1,13 @@
 # Release notes
 
+## macOS Local v0.7.9-beta — 2026-11-16
+- LaunchAgent watchdog runs every 90 seconds, recovering absent or stale agents while the gateway is reachable; restart cooldown prevents loops
+- Grace period extends for active browser sessions to avoid unnecessary loss of live state
+- Explicit Stop persists across macOS login and reinstall until the owner chooses Start or Repair
+- Existing device pairing, encrypted local profiles and browser extension permissions remain preserved during upgrade
+- SHA-256 verified hosted download and simulated watchdog/launchd unit tests passed; live macOS E2E verification is still required
+- The unsigned, non-notarized beta cannot remain connected while macOS is asleep or powered off
+
 ## v0.7.8-beta — November 2026
 - Mac extension animated button states: pressed, busy, success and failure
 - Explicit per-tab authorization for existing Chrome, native messaging bridge
