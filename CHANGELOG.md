@@ -26,3 +26,12 @@ Known: unsigned/notarized Mac app, Python prerequisite, manual extension install
 - Microsoft Windows runner successfully completed real Chromium automation smoke test
 - No Windows native existing-Chrome-tab attachment, code signing, bundled Python or public auto-update yet
 - Cloud beta, Linux, Mac and MCP continue to work independently
+
+
+## v0.8.1-beta — 15 November 2026
+- Owner-scoped persistent FIFO queue for free Hosted Cloud, maximum 200 entries
+- MCP tools cloud_queue_join, cloud_queue_status, cloud_queue_cancel
+- Ten-minute no-poll expiry and two-minute ready-to-claim window
+- Two live isolated Chromium workers passed fairness and cleanup verification
+- 10-language site now shows live aggregate queue size and public limitations
+- Multi-node autoscaling and paid checkout remain unavailable
