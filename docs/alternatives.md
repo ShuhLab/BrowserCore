@@ -6,12 +6,12 @@ This is a comparison of current emphasis, not a claim that Browser Core is unive
 |---|---|---|---|---|
 | Existing Chrome tab with per-tab permission | Yes, Local | Not its primary managed-browser model | Primarily managed browser contexts | Local/agent options |
 | Personal Linux BYO execution | Yes | Managed cloud | Managed cloud | Local and hosted variants |
-| Hosted scaling and built-in proxy fleet | No | Yes | Yes | Depends on product |
+| Hosted scaling and built-in proxy fleet | Limited two-slot Cloud beta; no managed proxy fleet claim | Yes | Yes | Depends on product |
 | Human takeover of same session | Yes | Consult latest product docs | Yes | Yes |
 | Persistent browser profiles | Yes | Consult current docs | Yes | Yes |
 | General-availability commercial hosting | No | Yes | Yes | Yes |
 
-**Browser Core's best current fit:** owners who prefer Local execution or want to control their own Linux machine through an MCP workflow, with short manual interventions when needed. We do not match the compliance, managed infrastructure, anti-bot fleet or large-scale capacity of leading hosted vendors.
+**Browser Core's best current fit:** owners who prefer Local Chrome and existing authenticated tabs, or want to control their own Linux VPS. A free, isolated Hosted Cloud browser is available as a **limited fallback** when Local/BYO is unavailable: 30 minutes per session, up to 120 minutes per account daily, and two shared slots. Cloud profiles are ephemeral, and remote human takeover is intended for short interventions. We do not match the compliance, proxy coverage, managed infrastructure or capacity of leading hosted vendors. **No direct head-to-head performance or task-success benchmark against TinyFish has been run.**
 
 Sources:
 - TinyFish: https://www.tinyfish.chat/browser
