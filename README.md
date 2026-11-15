@@ -1,66 +1,71 @@
-# Browser Core — browser automation with human control
+# Browser Core — a browser for AI agents, under your control
 
-**Connect AI agents to a browser you own. Choose your local Chrome or a personal Linux server.**
+**Automate your own Chrome or Linux VPS through ChatGPT/MCP. If your browser is unavailable, use limited Hosted Cloud as a fallback. Step in for passwords, CAPTCHA and 2FA, then let the agent continue.**
 
-Browser Core is an MCP-connected browser automation service by Shuh Lab. It opens pages, reads accessible controls, clicks, fills forms, extracts information, takes screenshots and saves encrypted browser profiles. When a login requires a password, CAPTCHA, 2FA or OAuth approval, the agent pauses for a user to briefly take control of that same session, then resumes.
+**Status: free public beta, version 0.8.0.** No payment or manual invitation required. Hosted Cloud has **two** concurrent slots and ephemeral **30-minute** sessions (maximum 120 minutes per account daily).
 
-**Status: free public Local/BYO beta. Automated Telegram verification; Hosted Cloud is not public yet.**
+- Website: https://browser.m2g.pro/
+- OAuth-enabled MCP remote endpoint: https://m2g.pro/browser-core/mcp
+- Official MCP Registry: io.github.ShuhLab/browser-core
+- Mac beta 0.7.8: https://browser.m2g.pro/downloads/BrowserCore-Mac-OneClick-0.7.8-beta.zip
+- Linux/VPS beta 0.7.8: https://browser.m2g.pro/docs#linux
+- Free verification and support: https://t.me/OpsTetherBot?start=browsercore
 
-- Product website: https://browser.m2g.pro/
-- GitHub documentation: https://github.com/ShuhLab/BrowserCore
-- MCP endpoint: https://m2g.pro/browser-core/mcp (OAuth; invitation required)
-- Official MCP Registry: io.github.ShuhLab/browser-core — version 0.7.8
-- Mac 0.7.8 beta: https://browser.m2g.pro/downloads/BrowserCore-Mac-OneClick-0.7.8-beta.zip
-- Linux / VPS 0.7.8 beta: https://browser.m2g.pro/docs#linux (self-service installer and worker package)
-- Linux worker package: https://browser.m2g.pro/downloads/BrowserCore-Linux-BYO-0.7.8-beta.tar.gz
-- Linux installer: https://browser.m2g.pro/downloads/install-linux.sh
+## Choose where your browser runs
 
-- Support: https://t.me/OpsTetherBot?start=browsercore
-
-## Current capabilities
-
-| Feature | Local Mac | Personal Linux BYO | Hosted commercial cloud |
+| Feature | Local Chrome | Your Linux VPS (BYO) | Hosted Cloud (limited beta) |
 |---|---|---|---|
-| MCP browser automation | Tested | Tested | Not available |
-| Encrypted, reusable browser profile | Yes | Yes | Not available |
-| Manual login / CAPTCHA / 2FA | Native Chrome or controlled window | Short, temporary remote live view | Not available |
-| Connect to existing, individually approved Chrome tabs | Yes | No | Not available |
-| Infrastructure provided by the user | Local computer | Your own server | Not available |
+| Browser location | Your computer | Your server | Our isolated server worker (fallback) |
+| Installation needed | Mac agent + extension | Linux worker | **No** |
+| MCP navigation, forms, extraction, screenshots | Yes | Yes | Yes |
+| Existing Chrome tab with individual permission | Yes | No | No |
+| Profile storage | Persistent locally | Persistent on your VPS | **Ephemeral, erased on release** |
+| Manual login / CAPTCHA / 2FA | Native browser | Short handoff link | Short handoff link |
+| Concurrent capacity | Your device | Your VPS | Two global slots; one per account |
+| Price in free beta | Own hardware | Own VPS | Free: 30 min / session, 120 min / day |
 
-**Manual remote viewing is ONLY for short authentication or verification steps.** It is not intended for normal browsing; use your own computer when you need comfortable interactive work.
+**Use Local Chrome when the work depends on your existing browser login.** Your own VPS is an independent remote option; Hosted Cloud is an installation-free **backup**, not our preferred mode for authenticated websites. Remote live view is for brief human login or correction, not comfortable full-time browsing.
 
-## Getting started
+## Start in ChatGPT
 
-1. Open https://t.me/OpsTetherBot?start=browsercore or send /browser to the bot. It issues a one-time OAuth code automatically; no manual operator invitation.
-2. Add the OAuth-enabled MCP endpoint https://m2g.pro/browser-core/mcp in ChatGPT.
-3. Enter your Telegram-issued code on the official Browser Core OAuth page. This code expires after 15 minutes and is single-use.
-4. Choose Local or BYO, pair the worker using a separate pairing code, and explicitly grant the Chrome tab to operate.
-5. Enter sensitive login details only in the real browser, never in chat.
+1. Open the Telegram bot https://t.me/OpsTetherBot?start=browsercore and send /browser. It automatically issues a one-use OAuth code to your verified chat.
+2. Add https://m2g.pro/browser-core/mcp as an OAuth-enabled MCP app in ChatGPT.
+3. Enter the single-use code on Browser Core's actual OAuth consent page (15-minute validity).
+4. Choose Cloud, Local or BYO in execution_options. Cloud needs no local installation; Local/BYO need separate worker pairing.
+5. Ask the agent to browse. If a login needs you, intervene directly in the browser, never paste passwords into ChatGPT.
+6. When finished in Cloud, close the browser and use cloud_release to free the slot and erase temporary profile data.
 
-The current Mac installer is **unsigned, not notarized, and requires Python 3.10–3.13**. On Linux, the separately documented self-service script runs under an ordinary account and validates the downloaded versioned worker package checksum. Chrome extension installation may require Developer Mode. Windows, Apple Silicon and large-scale commercial hosted Cloud are not yet release-certified.
+**Cloud is limited:** Only two slots exist. If busy, retry later or choose Local/BYO. Cloud cookies and login state are erased after the session; this is not permanent browser storage. There are no paid plans or automatic charges.
 
-## Why consider Browser Core?
+The Mac beta is unsigned and not notarized; it requires Python 3.10–3.13. Linux has a user-scoped installer with SHA-256 integrity verification. No broad Windows, Apple Silicon or commercial SLA certification is claimed.
 
-- Work in your existing, explicitly approved Chrome tab instead of copying a profile into an agent cloud.
-- Choose a local computer or your own Linux host; no mandatory commercial browser-minute subscription for these two modes during the beta.
-- Human and agent can cooperate in the same remote context during an authentication challenge.
-- Persistent sessions and encrypted browser profiles, with explicit permission boundaries.
+## Actual competitive advantage
 
-These are our current product design choices, **not claims of industry-first features**. Manual takeover exists in Browserbase and other platforms. TinyFish offers a mature managed Chromium, CDP and proxy service that this beta does NOT replace at scale.
+Browser Core combines **individually authorized existing Chrome tabs**, **your own personal Linux worker**, and **limited Hosted Cloud** in one MCP workflow. You decide where browser execution happens.
 
-See detailed, sourced product positioning in docs/alternatives.md.
+Human takeover is **not unique** to Browser Core: Browserbase and others already offer it. TinyFish and Browserbase have more mature hosted browser infrastructure, proxy offerings and scale. Browser Core's free two-slot Cloud beta does not replace their full commercial managed platforms. **We have not run comparable Browser Core-versus-TinyFish speed or task-completion benchmarks, so we do not claim our remote mode is faster or more reliable.**
 
-## Documentation
+Compare alternatives: docs/alternatives.md
 
-- docs/getting-started.md
-- docs/architecture.md
-- docs/alternatives.md
-- docs/roadmap.md
-- SECURITY.md
-- CHANGELOG.md
-- https://browser.m2g.pro/privacy
-- https://browser.m2g.pro/terms
+## Privacy, security and current limitations
 
-## Distribution, access, and payment
+- OAuth account subjects are bound to verified Telegram IDs; no public browser session is shared with another account.
+- Browser workers run under distinct restricted Linux users with CPU/RAM/process limits and independent encrypted storage.
+- Private network ranges are denied; browser egress blocks unsafe destinations. A local-only bridge connects workers to MCP.
+- The free Cloud broker enforces one slot per account, a 30-minute lease and 120 minutes daily; data is erased on release.
+- Local Chrome extension permissions are granted tab by tab, not over the whole Chrome profile.
+- There is **no** independently audited multi-tenant environment, SOC 2 / ISO claim, paid checkout or guaranteed 24/7 availability.
+- This repository contains **public documentation and release metadata only**; the backend remains proprietary.
 
-Free public beta access needs no manual invitation. Merchant checkout and shared Hosted Cloud are disabled pending security and provider approval. This repo contains **documentation and release metadata only**; the service backend is proprietary, not open source.
+## Links
+
+- [Getting started](docs/getting-started.md)
+- [Architecture](docs/architecture.md)
+- [Comparison](docs/alternatives.md)
+- [Roadmap](docs/roadmap.md)
+- [Release notes](CHANGELOG.md)
+- [Security](SECURITY.md)
+- [Privacy](https://browser.m2g.pro/privacy)
+- [Terms](https://browser.m2g.pro/terms)
+
+**Payments remain disabled.** YooKassa product approval is pending and Digiseller seller setup is incomplete. Never purchase Browser Core beta codes from third parties.
