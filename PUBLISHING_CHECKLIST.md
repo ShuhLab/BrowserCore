@@ -24,3 +24,9 @@ Note: placing server.json in a repository is NOT publishing to the official MCP 
 - [x] Linux/BYO worker package published with SHA-256, installer and documentation; tested on owner's Linux QA
 - [x] Ten-language, 20-case responsive Chromium verification
 - [ ] Independent first-user Linux and Mac acceptance tests
+
+
+- [x] Durable owner-scoped Cloud FIFO queue, 200 entry limit, broker and MCP tools deployed
+- [x] Live two-worker anti-bypass FIFO test and 10-language queue documentation
+- [ ] Multi-node elastic scaling to support hundreds of concurrent browsers
+- [ ] Merchant approval, signed desktop installers, independent security audit
