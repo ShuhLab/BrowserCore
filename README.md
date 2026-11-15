@@ -7,7 +7,7 @@
 - Website: https://browser.m2g.pro/
 - OAuth-enabled MCP remote endpoint: https://m2g.pro/browser-core/mcp
 - Official MCP Registry: io.github.ShuhLab/browser-core
-- Mac beta 0.7.8: https://browser.m2g.pro/downloads/BrowserCore-Mac-OneClick-0.7.8-beta.zip
+- Mac beta 0.7.9: https://browser.m2g.pro/downloads/BrowserCore-Mac-OneClick-0.7.9-beta.zip
 - Linux/VPS beta 0.7.8: https://browser.m2g.pro/docs#linux
 - Windows standalone beta 0.8.0: https://browser.m2g.pro/docs#windows (CI-tested; unsigned, Python required, no existing Chrome tab access)
 - Free verification and support: https://t.me/OpsTetherBot?start=browsercore
@@ -40,7 +40,7 @@
 
 Cloud cookies and login state are erased when the session is released. Paid plans and checkout remain disabled.
 
-The Mac beta is unsigned and not notarized; it requires Python 3.10–3.13. Linux has a user-scoped installer with SHA-256 integrity verification. No broad Windows, Apple Silicon or commercial SLA certification is claimed.
+The Mac beta 0.7.9 uses a launchd recovery watchdog (90-second checks) and preserves an explicit owner Stop across logins. Automatic recovery is only possible while the Mac is awake and has network access. The Mac beta is unsigned and not notarized; it requires Python 3.10–3.13. Linux has a user-scoped installer with SHA-256 integrity verification. No broad Windows, Apple Silicon or commercial SLA certification is claimed.
 
 ## Actual competitive advantage
 
