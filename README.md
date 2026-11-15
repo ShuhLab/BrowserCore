@@ -6,10 +6,10 @@ Browser Core is an MCP-connected browser automation service by Shuh Lab. It open
 
 **Status: free, invitation-only beta. Not a public paid cloud product.**
 
-- Planned product site: https://browser.m2g.pro (DNS not configured yet)
-- Working temporary site: https://m2g.pro/browser-core/home
+- Product website: https://browser.m2g.pro/
+- GitHub documentation: https://github.com/ShuhLab/BrowserCore
 - MCP endpoint: https://m2g.pro/browser-core/mcp (OAuth; invitation required)
-- Mac 0.7.8 beta: https://m2g.pro/pilots/F8078qaB5VJCi3aHBkeLUt6bd520aSA/BrowserCore-Mac-OneClick-0.7.8-beta.zip
+- Mac 0.7.8 beta: https://browser.m2g.pro/downloads/BrowserCore-Mac-OneClick-0.7.8-beta.zip
 - Support: https://t.me/OpsTetherBot?start=browsercore
 
 ## Current capabilities
@@ -53,8 +53,8 @@ See detailed, sourced product positioning in docs/alternatives.md.
 - docs/roadmap.md
 - SECURITY.md
 - CHANGELOG.md
-- https://m2g.pro/browser-core/privacy
-- https://m2g.pro/browser-core/terms
+- https://browser.m2g.pro/privacy
+- https://browser.m2g.pro/terms
 
 ## Distribution, access, and payment
 
