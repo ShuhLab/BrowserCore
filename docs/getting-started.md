@@ -9,11 +9,13 @@ Do not share the code: it authenticates your Browser Core account and is separat
 Add the MCP endpoint https://m2g.pro/browser-core/mcp with OAuth in ChatGPT. Enter the one-time code issued by Telegram on the Browser Core consent page. Successful authorization creates a per-account identity isolated from other users.
 
 ## Local Mac
-1. Download BrowserCore-Mac-OneClick-0.7.8-beta.zip from the website.
+1. Download BrowserCore-Mac-OneClick-0.7.9-beta.zip from the website.
 2. Requires macOS and Python 3.10–3.13. The beta is not signed or notarized.
 3. Install and pair the local agent with your own code.
 4. Open Chrome extensions and allow Browser Core for the specific tab.
 5. Keep your own Chrome window open when login, password, 2FA or CAPTCHA is needed.
+6. After installing 0.7.9, approve restarting the agent for the update to take effect. A launchd watchdog checks for stale service status every 90 seconds. Use the Browser Core menu's **Stop** to disable automatic restarts until **Start** is explicitly selected again; this choice persists after logout/login.
+7. macOS sleep, a closed laptop lid, shutdown, or an offline network still interrupts Local mode. Use your own always-on Linux worker or free limited Hosted Cloud for tasks that must continue when the Mac is asleep.
 
 ## Linux / own VPS (BYO)
 
