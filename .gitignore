@@ -1,0 +1,12 @@
+.env
+.env.*
+*.pem
+*.key
+*.sqlite3*
+*.log
+private-data/
+secrets/
+__pycache__/
+.venv/
+device.json
+master.key

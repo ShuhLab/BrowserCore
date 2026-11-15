@@ -1,0 +1,1 @@
+f322ed08e2fc795f75327aef2c53ff85e00a496e5ff84a636da5927334189860  BrowserCore-Mac-OneClick-0.7.8-beta.zip
