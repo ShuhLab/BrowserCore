@@ -7,7 +7,7 @@
 - Website: https://browser.m2g.pro/
 - OAuth-enabled MCP remote endpoint: https://m2g.pro/browser-core/mcp
 - Official MCP Registry: io.github.ShuhLab/browser-core
-- Mac beta 0.7.9: https://browser.m2g.pro/downloads/BrowserCore-Mac-OneClick-0.7.9-beta.zip
+- Mac beta 0.7.10: https://browser.m2g.pro/downloads/BrowserCore-Mac-OneClick-0.7.10-beta.zip — [recovery fixes, checksum and limitations](docs/mac-0.7.10.md)
 - Linux/VPS beta 0.7.8: https://browser.m2g.pro/docs#linux
 - Windows standalone beta 0.8.0: https://browser.m2g.pro/docs#windows (CI-tested; unsigned, Python required, no existing Chrome tab access)
 - Free verification and support: https://t.me/OpsTetherBot?start=browsercore
@@ -31,7 +31,7 @@
 
 1. Open the Telegram bot https://t.me/OpsTetherBot?start=browsercore and send /browser. It automatically issues a one-use OAuth code to your verified chat.
 2. Add https://m2g.pro/browser-core/mcp as an OAuth-enabled MCP app in ChatGPT.
-3. Enter the single-use code on Browser Core's actual OAuth consent page (15-minute validity).
+3. Enter the single-use code on the Browser Core's actual OAuth consent page (15-minute validity).
 4. Choose Cloud, Local or BYO in execution_options. Cloud needs no local installation; Local/BYO need separate worker pairing.
 5. Ask the agent to browse. If a login needs you, intervene directly in the browser, never paste passwords into ChatGPT.
 6. When finished in Cloud, close the browser and use cloud_release to free the slot and erase temporary profile data.
@@ -40,7 +40,7 @@
 
 Cloud cookies and login state are erased when the session is released. Paid plans and checkout remain disabled.
 
-The Mac beta 0.7.9 uses a launchd recovery watchdog (90-second checks) and preserves an explicit owner Stop across logins. Automatic recovery is only possible while the Mac is awake and has network access. The Mac beta is unsigned and not notarized; it requires Python 3.10–3.13. Linux has a user-scoped installer with SHA-256 integrity verification. No broad Windows, Apple Silicon or commercial SLA certification is claimed.
+The Mac beta 0.7.10 fixes packaging of the launchd recovery watchdog and the Repair app. Recovery checks run every 90 seconds; an explicit owner Stop is preserved across logins. Automatic recovery is only possible while the Mac is awake and has network access. The Mac beta is unsigned and not notarized; it requires Python 3.10–3.13. The exact cause of an existing Mac's `KICKSTART_FAILED rc=1` still requires its detailed error; live macOS installation testing is not claimed. Linux has a user-scoped installer with SHA-256 integrity verification. No broad Windows, Apple Silicon or commercial SLA certification is claimed.
 
 ## Actual competitive advantage
 
