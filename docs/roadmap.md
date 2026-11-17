@@ -1,18 +1,15 @@
-# Status
+# Roadmap and unfinished gates
 
-Implemented in the free public Local/BYO beta:
-- Local worker and individually authorized existing Chrome tabs
-- Linux BYO worker, outbound WebSocket transport
-- MCP navigation, DOM snapshots, forms, screenshot, structured extraction
-- Short human takeover for login/2FA/CAPTCHA, followed by agent resume
-- Encrypted profile persistence
+See [current release](current-release.md) for what is shipped.
 
-Not ready for general availability:
-- Self-service registration and account recovery
-- Secure, independent commercial multi-tenant hosted cloud capacity
-- Signed/notarized Mac package with bundled runtime
-- Broad Apple Silicon and Windows acceptance
-- Independent security and sustained workload verification
-- Payments, subscriptions, refunds, and merchant compliance
+## Remaining before commercial availability
 
-YooKassa merchant clarification is pending, Digiseller seller setup is incomplete. No payment is required in the current beta. Cloud remains off until account isolation and metering pass tests.
+- Complete receipt handling, account-bound paid delivery, renewal and refund acceptance for YooKassa and Telegram Stars. Merchant approval/key verification alone does not enable sales.
+- Finish and audit a separate credential-provisioning channel with a trusted local destination approval UI; it is not shipped or enabled in the current release.
+- Complete reproducible real Mac end-to-end installation, recovery and authorized-send acceptance, not just draft input or Linux fixtures.
+- Implement and verify Windows native existing-tab attachment; current Windows is standalone Chromium only.
+- Add signed/notarized desktop installers, a bundled Python runtime and verified update handling.
+- Improve duplicate-tab reuse and concurrency controls. The current duplicate-site badge is informational, not a deployed hard cap.
+- Report actual provider API token usage only where the provider supplies it; do not charge for a bytes/4 estimate of MCP text.
+
+Hosted Cloud remains limited and ephemeral. Multi-node commercial autoscaling, permanent cloud sessions, independently audited tenant isolation and guaranteed service levels are not claimed.

@@ -1,0 +1,15 @@
+{
+  "release_status": "technical_beta",
+  "server_version": "0.8.4-beta",
+  "agent_version": "0.7.14-beta",
+  "extension_version": "0.7.14",
+  "windows_package_version": "0.8.1-beta",
+  "payments_enabled": false,
+  "secret_handoff_enabled": false,
+  "artifacts": [
+    {"filename":"BrowserCore-Mac-OneClick-0.7.14-beta.zip","url":"https://browser.m2g.pro/downloads/BrowserCore-Mac-OneClick-0.7.14-beta.zip","sha256":"922c07630a613392a022e46da29d128a4561194d412ca580457341e1813db8fa","size_bytes":326728},
+    {"filename":"BrowserCore-Extension-0.7.14.zip","url":"https://browser.m2g.pro/downloads/BrowserCore-Extension-0.7.14.zip","sha256":"3c60300f23c5b29db2e5ba5cab6923fae2ba4125736ee716c0ba89c02297bacc","size_bytes":20450},
+    {"filename":"BrowserCore-Linux-BYO-0.7.14-beta.tar.gz","url":"https://browser.m2g.pro/downloads/BrowserCore-Linux-BYO-0.7.14-beta.tar.gz","sha256":"e3104d6020463472a594823f8dea1ce7321a2dff6b9aa9ca9af97af282a248d3","size_bytes":52796},
+    {"filename":"BrowserCore-Windows-Standalone-0.8.1-beta.zip","url":"https://browser.m2g.pro/downloads/BrowserCore-Windows-Standalone-0.8.1-beta.zip","sha256":"22e5c7f3fb7d926e3c51f89800efc1aa10478af9226c611e91fd050a14869dec","size_bytes":65060}
+  ]
+}

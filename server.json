@@ -3,15 +3,7 @@
   "name": "io.github.ShuhLab/browser-core",
   "title": "Browser Core",
   "description": "MCP browser automation: local Chrome, personal VPS and limited Hosted Cloud with manual handoff.",
-  "repository": {
-    "url": "https://github.com/ShuhLab/BrowserCore",
-    "source": "github"
-  },
-  "version": "0.8.1",
-  "remotes": [
-    {
-      "type": "streamable-http",
-      "url": "https://m2g.pro/browser-core/mcp"
-    }
-  ]
+  "repository": {"url":"https://github.com/ShuhLab/BrowserCore","source":"github"},
+  "version": "0.8.4-beta",
+  "remotes": [{"type":"streamable-http","url":"https://m2g.pro/browser-core/mcp"}]
 }

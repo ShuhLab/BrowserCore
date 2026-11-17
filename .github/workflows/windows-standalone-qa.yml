@@ -1,18 +1,16 @@
 name: Windows standalone browser beta QA
-
 on:
   workflow_dispatch:
   push:
     branches: [main]
     paths:
       - .github/workflows/windows-standalone-qa.yml
-
+      - RELEASE.json
 permissions:
   contents: read
-
 jobs:
   smoke:
-    name: Windows real Chromium smoke test
+    name: Windows real Chromium smoke test 0.8.1
     runs-on: windows-2025
     timeout-minutes: 25
     steps:
@@ -24,21 +22,23 @@ jobs:
         shell: pwsh
         run: |
           $ErrorActionPreference = 'Stop'
-          $uri = 'https://browser.m2g.pro/downloads/BrowserCore-Windows-Standalone-0.8.0-beta.zip'
+          $uri = 'https://browser.m2g.pro/downloads/BrowserCore-Windows-Standalone-0.8.1-beta.zip'
           Invoke-WebRequest -Uri $uri -OutFile "$env:RUNNER_TEMP\worker.zip"
           $actual = (Get-FileHash "$env:RUNNER_TEMP\worker.zip" -Algorithm SHA256).Hash.ToLowerInvariant()
-          $expected = 'e80e0f1710971d399837598522996bd72cf7746dc29a3c53d50eadf05661c93d'
+          $expected = '22e5c7f3fb7d926e3c51f89800efc1aa10478af9226c611e91fd050a14869dec'
           if ($actual -ne $expected) { throw 'Worker package SHA256 mismatch' }
           Expand-Archive -Path "$env:RUNNER_TEMP\worker.zip" -DestinationPath "$env:RUNNER_TEMP\browsercore" -Force
           $root = "$env:RUNNER_TEMP\browsercore"
           if (!(Test-Path "$root\core.py")) { throw 'core.py is missing' }
           if (!(Test-Path "$root\hybrid\smoke.py")) { throw 'smoke.py is missing' }
           echo "BC_PACKAGE_PATH=$root" >> $env:GITHUB_ENV
-      - name: Install pinned requirements and bundled Chromium
+      - name: Install requirements and bundled Chromium
         shell: pwsh
         run: |
           python -m pip install --disable-pip-version-check --only-binary=:all: -r "$env:BC_PACKAGE_PATH\requirements-agent.txt"
+          if ($LASTEXITCODE -ne 0) { throw 'Dependency installation failed' }
           python -m playwright install chromium --only-shell
+          if ($LASTEXITCODE -ne 0) { throw 'Chromium installation failed' }
       - name: Actual Windows browser automation smoke
         shell: pwsh
         run: |
@@ -46,9 +46,13 @@ jobs:
           $env:PYTHONPATH = "$env:BC_PACKAGE_PATH"
           python -m hybrid.smoke
           if ($LASTEXITCODE -ne 0) { throw 'Windows Chromium smoke failed' }
-      - name: Confirm Windows existing-tab bridge is disabled
+      - name: Confirm agent version and Windows bridge guard
         shell: pwsh
         run: |
-          $source = Get-Content "$env:BC_PACKAGE_PATH\hybrid\agent.py" -Raw
-          if (!$source.Contains("if os.name != 'nt':")) { throw 'Unsafe Windows existing-tab bridge was not disabled' }
-          Write-Host 'Existing Chrome tab attachment remains unsupported in this Windows beta.'
+          Set-Location "$env:BC_PACKAGE_PATH"
+          $env:PYTHONPATH = "$env:BC_PACKAGE_PATH"
+          $source = Get-Content '.\hybrid\agent.py' -Raw
+          if (!$source.Contains("if os.name != 'nt':")) { throw 'Windows bridge guard missing' }
+          python -c "from hybrid.status import VERSION; assert VERSION == '0.7.14-beta'; print(VERSION)"
+          if ($LASTEXITCODE -ne 0) { throw 'Agent version mismatch' }
+          Write-Host 'Existing Windows Chrome tab attachment remains unsupported.'
