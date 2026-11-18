@@ -1,6 +1,6 @@
 # Signed Browser Core beta updates
 
-Current release: Mac/Linux agent **0.7.18-beta**, Chrome extension **0.7.18**, Windows standalone **0.8.4-beta**.
+Current release: Mac/Linux agent **0.7.19-beta**, Chrome extension **0.7.19**, Windows standalone **0.8.4-beta**.
 
 ## Protocol and verification
 
@@ -23,14 +23,16 @@ The update is staged in a private new release directory; the current symlink is 
 
 ## Bootstrap and platform boundaries
 
-Install [Mac 0.7.18-beta](https://browser.m2g.pro/downloads/BrowserCore-Mac-OneClick-0.7.18-beta.zip) once to add the updater to an existing Mac. The already-installed 0.7.12 agent and 0.7.14 extension do not gain unattended updates remotely. Once bootstrapped, new versions use the signed channel.
+Install [Mac 0.7.19-beta](https://browser.m2g.pro/downloads/BrowserCore-Mac-OneClick-0.7.19-beta.zip) once to add the updater to an existing Mac. The already-installed 0.7.12 agent and 0.7.14 extension do not gain unattended updates remotely. Once bootstrapped, new versions use the signed channel.
 
 Linux installer: https://browser.m2g.pro/downloads/install-linux.sh, including an exact SHA-256 pin.
 
-Windows 0.8.4-beta is a manual-update standalone beta. A signed Windows updater and existing-Chrome-tab bridge require separate implementation/testing. Apple signing/notarization is also unfinished.
+Windows 0.8.5-beta is a manual-update standalone beta. A signed Windows updater and existing-Chrome-tab bridge require separate implementation/testing. Apple signing/notarization is also unfinished.
 
 ## Verified scope
 
-The updater passed isolated tests for invalid signatures, tampered manifests, unsafe archives, unexpected permissions, rollback, no profile access and delayed restart. A live HTTPS signed-package test installed the release atomically in a **temporary test home on Linux**. The Chrome panel and update watcher have synthetic/Chromium regression tests. A real user Mac background timer and future-version update cycle have not yet been acceptance-tested.
+The 0.7.18 signed updater was verified against the *0.7.19 package's unchanged file allowlist* and can accept this release unattended when the worker becomes idle. The updater passed isolated tests for invalid signatures, tampered manifests, unsafe archives, unexpected permissions, rollback, no profile access and delayed restart. A live HTTPS signed-package test installed the release atomically in a **temporary test home on Linux**. The Chrome panel and update watcher have synthetic/Chromium regression tests. A real user Mac background timer and future-version update cycle have not yet been acceptance-tested.
 
 No payment keys, browser sessions or other projects were modified by the release publication. Checkout and secure credential transfer remain disabled.
+
+The 0.7.19 package has no new on-disk module filenames compared with 0.7.18; additional security code is bundled into reviewed existing modules. This deliberately preserves upgrade compatibility without another bootstrap installation.

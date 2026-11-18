@@ -10,7 +10,7 @@ permissions:
   contents: read
 jobs:
   smoke:
-    name: Windows real Chromium smoke test 0.8.4
+    name: Windows real Chromium smoke test 0.8.5
     runs-on: windows-2025
     timeout-minutes: 25
     steps:
@@ -22,10 +22,10 @@ jobs:
         shell: pwsh
         run: |
           $ErrorActionPreference = 'Stop'
-          $uri = 'https://browser.m2g.pro/downloads/BrowserCore-Windows-Standalone-0.8.4-beta.zip'
+          $uri = 'https://browser.m2g.pro/downloads/BrowserCore-Windows-Standalone-0.8.5-beta.zip'
           Invoke-WebRequest -Uri $uri -OutFile "$env:RUNNER_TEMP\worker.zip"
           $actual = (Get-FileHash "$env:RUNNER_TEMP\worker.zip" -Algorithm SHA256).Hash.ToLowerInvariant()
-          $expected = '646ca5cd6dc37a200657ee5df55ad7b40eae7713208f2ef7fdf00080c743a54b'
+          $expected = '9884d0d81f835cfadff39eec1cca4ea7dd90459acf4ba1abefe69ad9cd8db51d'
           if ($actual -ne $expected) { throw 'Worker package SHA256 mismatch' }
           Expand-Archive -Path "$env:RUNNER_TEMP\worker.zip" -DestinationPath "$env:RUNNER_TEMP\browsercore" -Force
           $root = "$env:RUNNER_TEMP\browsercore"
@@ -53,6 +53,6 @@ jobs:
           $env:PYTHONPATH = "$env:BC_PACKAGE_PATH"
           $source = Get-Content '.\hybrid\agent.py' -Raw
           if (!$source.Contains("if os.name != 'nt':")) { throw 'Windows bridge guard missing' }
-          python -c "from hybrid.status import VERSION; assert VERSION == '0.7.18-beta'; print(VERSION)"
+          python -c "from hybrid.status import VERSION; assert VERSION == '0.7.19-beta'; print(VERSION)"
           if ($LASTEXITCODE -ne 0) { throw 'Agent version mismatch' }
           Write-Host 'Existing Windows Chrome tab attachment remains unsupported.'

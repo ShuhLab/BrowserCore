@@ -1,11 +1,19 @@
-## 0.7.18-beta signed updater bootstrap — 18 Nov 2026
+## Browser Core 0.7.19-beta — 18 November 2026
+
+- Added a registered-destination, popup-confirmed, encrypted API-key handoff channel, isolated from ordinary MCP snapshots and action arguments. Private UNIX-socket receiver authenticated by owner/worker identity and signed local approval. Only synthetic secrets were used in tests; first real Mac/provider transfer remains pending.
+- Added per-tab FIFO-style serial execution and atomic operation-ID admission. Different approved tabs remain independently runnable; paused and revoked tabs cannot execute waiting actions; duplicate submissions are not dispatched twice.
+- Kept exactly the 0.7.18 signed-updater package file set to preserve unattended compatibility. Mac and extension 0.7.19 and Linux 0.7.19 published, Windows standalone 0.8.5 requires a new CI acceptance run.
+- Improved commerce preview ledger handling: partial refunds now require review rather than automatically canceling all access; early renewals require fiscal policy review. Checkout remains disabled.
+- Private receiver and payment-preview services are running; browser runtime was not restarted and no user credentials were read or copied.
+
+## 0.7.19-beta signed updater bootstrap — 18 Nov 2026
 
 - Added pinned Ed25519 manifest verification, exact SHA-256/size checks, allowlisted files and atomic user-scoped Mac/Linux release switching; update source and signature are public.
 - Added an hourly-cadence-independent two-hour Mac launchd and Linux user-systemd timer. Owner Stop, disabled updates, active sessions/tabs and in-flight jobs defer automatic restart.
 - Added local Chrome extension update watcher that reloads unpacked extension after the signed local updater has installed new files; old versions need one bootstrap.
 - Added Mac menu controls for checking and disabling updates, and update-state diagnostics without page contents.
 - Fixed same-second fractional heartbeat timestamp validation; added regression coverage.
-- Published Mac/Linux 0.7.18-beta, Chrome extension 0.7.18 and Windows standalone 0.8.4-beta artifacts. Windows updater remains unfinished.
+- Published Mac/Linux 0.7.19-beta, Chrome extension 0.7.19 and Windows standalone 0.8.5-beta artifacts. Windows updater remains unfinished.
 - Checkout and secure credential handoff remain disabled. Real Mac unattended update and new Windows CI result still require acceptance.
 
 # Release notes

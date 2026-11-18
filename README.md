@@ -9,16 +9,16 @@
 | Component | Version | Package |
 |---|---|---|
 | Hosted MCP server | 0.8.4-beta | [Endpoint](https://m2g.pro/browser-core/mcp) |
-| Mac agent and OneClick installer | 0.7.18-beta | [Mac ZIP](https://browser.m2g.pro/downloads/BrowserCore-Mac-OneClick-0.7.18-beta.zip) |
-| Chrome extension | 0.7.18 | [Extension ZIP](https://browser.m2g.pro/downloads/BrowserCore-Extension-0.7.18.zip) |
-| Linux BYO worker | 0.7.18-beta | [Linux TAR.GZ](https://browser.m2g.pro/downloads/BrowserCore-Linux-BYO-0.7.18-beta.tar.gz) |
-| Windows standalone | 0.8.4-beta | [Windows ZIP](https://browser.m2g.pro/downloads/BrowserCore-Windows-Standalone-0.8.4-beta.zip) |
+| Mac agent and OneClick installer | 0.7.19-beta | [Mac ZIP](https://browser.m2g.pro/downloads/BrowserCore-Mac-OneClick-0.7.19-beta.zip) |
+| Chrome extension | 0.7.19 | [Extension ZIP](https://browser.m2g.pro/downloads/BrowserCore-Extension-0.7.19.zip) |
+| Linux BYO worker | 0.7.19-beta | [Linux TAR.GZ](https://browser.m2g.pro/downloads/BrowserCore-Linux-BYO-0.7.19-beta.tar.gz) |
+| Windows standalone | 0.8.4-beta | [Windows ZIP](https://browser.m2g.pro/downloads/BrowserCore-Windows-Standalone-0.8.5-beta.zip) |
 
 [Current release manifest](RELEASE.json) · [SHA-256 checksums](RELEASE_SHA256.txt) · [Release verification](docs/current-release.md)
 
 ## Signed automatic updates (new)
 
-**Mac and Linux:** one bootstrap installation of **0.7.18-beta** enables a user-level updater. It checks the fixed Browser Core HTTPS origin every two hours, verifies a pinned **Ed25519 signature**, checks exact ZIP/TAR SHA-256 and size, validates source paths/permissions and stages the next immutable version. It applies only when the worker reports no active sessions, no shared tabs and no in-flight jobs; otherwise the update is deferred. Mac shows auto-update on/off and a manual check in its menu bar. Linux uses a `systemd --user` timer.
+**Mac and Linux:** one bootstrap installation of **0.7.19-beta** enables a user-level updater. It checks the fixed Browser Core HTTPS origin every two hours, verifies a pinned **Ed25519 signature**, checks exact ZIP/TAR SHA-256 and size, validates source paths/permissions and stages the next immutable version. It applies only when the worker reports no active sessions, no shared tabs and no in-flight jobs; otherwise the update is deferred. Mac shows auto-update on/off and a manual check in its menu bar. Linux uses a `systemd --user` timer.
 
 The unpacked Chrome extension includes a local version-file watcher. After the updater installs a signed release, it reloads its own files. **Older extensions cannot install this watcher themselves**: the one-time bootstrap is required. A current working 0.7.14 extension remains compatible with an older 0.7.12 Mac agent; do not interrupt a task to align version numbers.
 
@@ -49,8 +49,14 @@ Browser Core is not independently security-audited or certified to SOC 2/ISO. Pa
 
 Hosted Cloud is a separate ephemeral two-slot beta, with 30 minutes per session and 120 minutes per account daily; no commercial autoscaling. Desktop workers require the user's hardware. The Mac build is unsigned/unnotarized and needs Python 3.10–3.13. No universal browser-website guarantee or commercial SLA is claimed.
 
-Merchant credentials for YooKassa are configured, but live Browser Core purchases, receipts, paid-entitlement delivery and Stars settlement are **off** pending acceptance tests. The experimental secure credential-transfer service is **not yet shipped**. [Roadmap](docs/roadmap.md).
+Merchant credentials for YooKassa are configured, but live Browser Core purchases, receipts, paid-entitlement delivery and Stars settlement are **off** pending acceptance tests. The private credential receiver and consented Chrome beta channel are deployed, but real-owner Mac acceptance and installing a provider key remain outstanding. Only registered destinations are supported; the current pilot target is a dedicated Community Pilot Telegram bot. [Roadmap](docs/roadmap.md).
 
 Website: [browser.m2g.pro](https://browser.m2g.pro) · [Support](https://browser.m2g.pro/support) · [Privacy](https://browser.m2g.pro/privacy) · [Terms](https://browser.m2g.pro/terms)
 
 The public repository contains release metadata, docs and CI; the backend remains proprietary.
+
+## Protected credential handoff (new beta)
+
+Browser Core 0.7.19 adds a popup-only **Connect API credential** flow for a registered server destination. The user must choose a destination and select the secret directly in an authorized browser tab; it is encrypted before transport and is not returned to the model. The private server receiver verifies the destination identity and stores the credential under private file permissions. For now only the Community Pilot Telegram destination is registered. The feature has passed synthetic Chromium and native IPC tests, but **real Mac approval and provider setup remain to be verified**. Do not paste keys in ChatGPT/Claude; do not confuse a saved credential with activation of billing or the target service.
+
+Commands to the *same* authorized tab now execute sequentially; commands to different tabs may run concurrently. A bounded per-tab queue protects resources, not a website-wide tab limit. Pause and revoke block queued work; operation IDs remain idempotent.

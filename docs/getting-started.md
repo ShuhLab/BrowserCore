@@ -6,7 +6,7 @@ Connect `https://m2g.pro/browser-core/mcp` via OAuth in **ChatGPT or Claude**. T
 
 ## Mac
 
-1. Download [Mac 0.7.18-beta](https://browser.m2g.pro/downloads/BrowserCore-Mac-OneClick-0.7.18-beta.zip). Extract and run `Install Browser Core.app`. This is unsigned beta software; do not disable macOS security globally.
+1. Download [Mac 0.7.19-beta](https://browser.m2g.pro/downloads/BrowserCore-Mac-OneClick-0.7.19-beta.zip). Extract and run `Install Browser Core.app`. This is unsigned beta software; do not disable macOS security globally.
 2. It preserves pairing/profiles and installs a user-level signed-update check. Approve a restart only when ready to interrupt a live browser.
 3. Chrome → chrome://extensions → Load unpacked. Choose `~/Library/Application Support/BrowserCore/Extension` or the extension-only extracted folder containing `manifest.json`.
 4. Permit only the desired tabs in the popup. The extension shows only connected tabs.
@@ -16,14 +16,18 @@ An older Mac 0.7.12-beta agent still works with extension 0.7.14; there is no re
 
 ## Linux
 
-Review https://browser.m2g.pro/downloads/install-linux.sh and execute it as an unprivileged user. It installs worker 0.7.18-beta, pins the package SHA-256, and creates a `systemd --user` updater timer. Existing desktop Chrome tabs are not attached by this package.
+Review https://browser.m2g.pro/downloads/install-linux.sh and execute it as an unprivileged user. It installs worker 0.7.19-beta, pins the package SHA-256, and creates a `systemd --user` updater timer. Existing desktop Chrome tabs are not attached by this package.
 
 ## Windows
 
-Download [Windows standalone 0.8.4-beta](https://browser.m2g.pro/downloads/BrowserCore-Windows-Standalone-0.8.4-beta.zip). It starts separate Playwright Chromium and requires Python 3.10–3.13. It does not attach to current Chrome/Edge tabs and has no unattended updater or signed EXE.
+Download [Windows standalone 0.8.5-beta](https://browser.m2g.pro/downloads/BrowserCore-Windows-Standalone-0.8.5-beta.zip). It starts separate Playwright Chromium and requires Python 3.10–3.13. It does not attach to current Chrome/Edge tabs and has no unattended updater or signed EXE.
 
 ## Modes and consent
 
 Always check `execution_status` and `execution_options`, reuse a suitable live session/approved tab and avoid opening duplicates. Local and BYO use the user's resources; Cloud is limited and ephemeral. A task may include multiple ordinary sends without a new confirmation for every message. Draft-only, stop and no-send instructions remain binding. Never retry an uncertain send automatically.
 
 Users enter passwords, OAuth, 2FA and CAPTCHA in their own browser during handoff, not in chat. Browser-to-server secret transfer is not shipped. Card and Stars checkout are not yet open.
+
+## Connecting a registered provider API key (beta)
+
+Open the provider's authorized browser tab, grant it to Browser Core and select only the credential text. In the extension popup choose the **registered destination** and confirm. The credential is encrypted in the tab and sent through the paired native worker to the private server receiver. The model sees only status. Do not paste the key in the chat or ordinary form-action arguments. The tab stays paused until you remove any secret from the screen and manually resume. Only the separate Community Pilot Telegram destination is currently registered; first real Mac/provider acceptance is pending. The target service and payments are not switched on simply by saving a credential.
