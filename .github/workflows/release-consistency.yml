@@ -1,4 +1,4 @@
-name: Public release consistency
+name: Public release and signed updater consistency
 on:
   workflow_dispatch:
   push:
@@ -7,17 +7,21 @@ on:
       - RELEASE.json
       - RELEASE_SHA256.txt
       - scripts/verify-release.py
+      - scripts/verify-autoupdate.py
       - .github/workflows/release-consistency.yml
 permissions:
   contents: read
 jobs:
   verify:
     runs-on: ubuntu-latest
-    timeout-minutes: 6
+    timeout-minutes: 8
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Check live public distribution
+      - run: python -m pip install --disable-pip-version-check cryptography==46.0.3
+      - name: Check public release and two mirrors
         run: python scripts/verify-release.py
+      - name: Verify Ed25519-signed update channel
+        run: python scripts/verify-autoupdate.py

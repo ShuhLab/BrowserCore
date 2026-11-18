@@ -1,15 +1,14 @@
-# Roadmap and unfinished gates
+# Browser Core remaining release gates
 
-See [current release](current-release.md) for what is shipped.
+Current public release 0.7.18-beta. Confirmed active: Local Chrome per-tab consent, BYO, limited ephemeral Cloud, manual handoff, real DOM checks, task-authorized browser submissions, signed **Mac/Linux** background update bootstrap.
 
-## Remaining before commercial availability
+Not yet finished:
+1. **YooKassa and Telegram Stars**: public checkout, fiscal receipt handling for future-period renewals, account-bound entitlement activation, refunds and one real opt-in purchase/rollback test. Merchant approval alone does not open sales.
+2. **Protected API key connection**: complete local UI, device attestation, encrypted handoff and live target validation; currently prototype/staging only.
+3. **Windows native Chrome and auto-updates**: current 0.8.4-beta is standalone and manually updated.
+4. Apple Developer ID signing/notarization, bundled runtime, cross-platform update acceptance and tested rollback on actual OS devices.
+5. Server-side duplicate-tab/session reuse and user-configurable task concurrency; a local duplicate badge alone does not enforce execution limits.
+6. Exact provider token charges where available. Bytes/4 extension estimates are **not** billable model tokens.
+7. Independent security and reliability audit, commercial scaling and meaningful SLAs.
 
-- Complete receipt handling, account-bound paid delivery, renewal and refund acceptance for YooKassa and Telegram Stars. Merchant approval/key verification alone does not enable sales.
-- Finish and audit a separate credential-provisioning channel with a trusted local destination approval UI; it is not shipped or enabled in the current release.
-- Complete reproducible real Mac end-to-end installation, recovery and authorized-send acceptance, not just draft input or Linux fixtures.
-- Implement and verify Windows native existing-tab attachment; current Windows is standalone Chromium only.
-- Add signed/notarized desktop installers, a bundled Python runtime and verified update handling.
-- Improve duplicate-tab reuse and concurrency controls. The current duplicate-site badge is informational, not a deployed hard cap.
-- Report actual provider API token usage only where the provider supplies it; do not charge for a bytes/4 estimate of MCP text.
-
-Hosted Cloud remains limited and ephemeral. Multi-node commercial autoscaling, permanent cloud sessions, independently audited tenant isolation and guaranteed service levels are not claimed.
+Existing user devices and sessions are not force-updated merely by publishing a signed beta.

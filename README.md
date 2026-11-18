@@ -1,67 +1,56 @@
 # Browser Core — your browser, under your control
 
-Use your permitted Chrome tabs, a personal Linux VPS, or limited Hosted Cloud through **ChatGPT and Claude**. Step in for passwords, CAPTCHA and 2FA, then return control to the agent.
+**ChatGPT and Claude** can automate individually authorized Chrome tabs, a personal Linux VPS or limited Hosted Cloud via [Browser Core MCP](https://m2g.pro/browser-core/mcp). Users may intervene for logins, CAPTCHA and 2FA.
 
-**Status: technical beta.** Current access has no charges; this is not a promise of permanently free or unlimited Local/BYO service. Checkout and browser-to-server credential transfer remain disabled.
+**Current status: technical beta.** Paid checkout and browser-to-server credential provisioning are not yet enabled. Free beta access is not a promise of unlimited or permanently free Local/BYO usage.
 
-## Current releases
+## Latest verified releases
 
-| Component | Version | Download / status |
+| Component | Version | Package |
 |---|---|---|
-| Hosted MCP server | 0.8.4-beta | https://m2g.pro/browser-core/mcp |
-| Mac installer and agent | 0.7.14-beta | https://browser.m2g.pro/downloads/BrowserCore-Mac-OneClick-0.7.14-beta.zip |
-| Chrome extension | 0.7.14 | https://browser.m2g.pro/downloads/BrowserCore-Extension-0.7.14.zip |
-| Linux/BYO worker | 0.7.14-beta | https://browser.m2g.pro/docs#linux |
-| Windows standalone package | 0.8.1-beta | https://browser.m2g.pro/docs#windows |
+| Hosted MCP server | 0.8.4-beta | [Endpoint](https://m2g.pro/browser-core/mcp) |
+| Mac agent and OneClick installer | 0.7.18-beta | [Mac ZIP](https://browser.m2g.pro/downloads/BrowserCore-Mac-OneClick-0.7.18-beta.zip) |
+| Chrome extension | 0.7.18 | [Extension ZIP](https://browser.m2g.pro/downloads/BrowserCore-Extension-0.7.18.zip) |
+| Linux BYO worker | 0.7.18-beta | [Linux TAR.GZ](https://browser.m2g.pro/downloads/BrowserCore-Linux-BYO-0.7.18-beta.tar.gz) |
+| Windows standalone | 0.8.4-beta | [Windows ZIP](https://browser.m2g.pro/downloads/BrowserCore-Windows-Standalone-0.8.4-beta.zip) |
 
-The Mac package contains **the same extension bytes** as the extension-only ZIP. Existing Mac agents 0.7.12-beta remain compatible with extension 0.7.14; a working installation does not need to be replaced just to match version numbers.
+[Current release manifest](RELEASE.json) · [SHA-256 checksums](RELEASE_SHA256.txt) · [Release verification](docs/current-release.md)
 
-[Machine-readable release manifest](RELEASE.json) · [SHA-256 checksums](RELEASE_SHA256.txt) · [Current release notes and verification scope](docs/current-release.md)
+## Signed automatic updates (new)
 
-## What changed
+**Mac and Linux:** one bootstrap installation of **0.7.18-beta** enables a user-level updater. It checks the fixed Browser Core HTTPS origin every two hours, verifies a pinned **Ed25519 signature**, checks exact ZIP/TAR SHA-256 and size, validates source paths/permissions and stages the next immutable version. It applies only when the worker reports no active sessions, no shared tabs and no in-flight jobs; otherwise the update is deferred. Mac shows auto-update on/off and a manual check in its menu bar. Linux uses a `systemd --user` timer.
 
-- The extension panel lists **only connected tabs**, including paused tabs. Unconnected, unnamed tabs, internal window numbers and empty usage cards are hidden. No broad `tabs` permission is requested.
-- Per-tab counters measure Browser Core calls and text volume. The approximate text-token equivalent is **not** ChatGPT/Claude token billing or monetary cost.
-- DOM actions support contenteditable editors and verify their effects. Missing results, stale elements and rejected values have diagnostic reason codes rather than a false success.
-- Ordinary sends within an authorized task do not require a physical click or a fresh conversational confirmation for each message. Explicit draft-only instructions remain binding. Operation IDs prevent accidental duplicate execution, not multiple authorized messages.
-- ChatGPT and Claude use the same verified Browser Core account and its devices. The owner confirmed Claude connection and device access. This is not an Anthropic directory listing or certification.
+The unpacked Chrome extension includes a local version-file watcher. After the updater installs a signed release, it reloads its own files. **Older extensions cannot install this watcher themselves**: the one-time bootstrap is required. A current working 0.7.14 extension remains compatible with an older 0.7.12 Mac agent; do not interrupt a task to align version numbers.
 
-## Get started
+**Windows** still has manual updates. It is an unsigned separate-Chromium beta without native existing-Chrome-tab attachment, a bundled runtime, or Windows unattended updater. Do not promise background updates on Windows yet.
 
-1. Connect `https://m2g.pro/browser-core/mcp` through OAuth in your MCP client. Account sign-in is provided through https://t.me/OpsTetherBot?start=browsercore (`/browser`); enter any code only on the official authorization screen.
-2. Reuse an existing paired worker where available. A new computer requires a **separate worker pairing code**, not the account sign-in code.
-3. On Mac, install the ZIP and load `~/Library/Application Support/BrowserCore/Extension` through Chrome's **Load unpacked**. Select the directory containing `manifest.json`, not the Mac installer directory.
-4. Permit the intended existing tab through the extension. Reading the local list does not give an AI access to other tabs.
-5. Before a task, check execution status and use the selected Local/BYO/Cloud mode. Reuse suitable live sessions rather than repeatedly opening the same site.
+Signing public key (Ed25519, hex): `ad1f40ce4961e1c512793a6a101bea4f7a3a1201d6e3983de65bc11adadc0b70`. No private signing key is included in an installer. [Update protocol](docs/auto-updates.md).
 
-[Detailed setup](docs/getting-started.md) · [Claude](docs/claude.md) · [Windows limitations](docs/windows-beta.md)
+## Existing Chrome tab experience
 
-## Execution modes
+Only tabs explicitly connected in Browser Core are visible to the agent. The extension panel lists only those connected tabs, including paused ones; it hides empty usage cards, unrelated tabs and window IDs. No broad `tabs` permission is requested. A duplicate-site indicator does not close tabs or limit how many a user may open.
 
-| Capability | Mac + permitted Chrome | Linux BYO | Hosted Cloud beta |
-|---|---|---|---|
-| Browser location | Your computer | Your server | Isolated hosted worker |
-| Existing logged-in Chrome tabs | Individually permitted | Not configured by the BYO package | No |
-| Profile storage | Locally persistent | Persistent on your VPS | Ephemeral |
-| Manual login / CAPTCHA / 2FA | Your existing browser | Brief handoff | Brief handoff |
-| Capacity | Device and configured worker limits | Your VPS and worker limits | Two shared slots; one per account |
+The browser checks that DOM actions actually change a field or page state before reporting success. A successfully entered draft is **not** proof of sending. Ordinary sends within an authorized task do not require repeated per-message confirmation; explicit draft-only/no-send instructions remain binding. Operation IDs prevent accidental duplicate submission after uncertain results.
 
-Hosted Cloud currently allows 30 minutes per session and 120 minutes per account daily. Its FIFO queue has at most 200 waiting entries, a ten-minute inactive-entry expiry and a two-minute ready-to-claim window. It does not auto-start a browser, guarantee a wait time or purchase infrastructure. Close the browser and release the Cloud worker when done. Never silently switch a Local task to Cloud.
+Per-tab counters show measured calls and text volume; bytes/4 is an approximation, **not** actual ChatGPT/Claude token usage or a charge.
 
-## Verification and limits
+## Installation
 
-Published archives were downloaded over HTTPS and checked against SHA-256. Extracted Mac, Linux and Windows worker code passed import and Chromium smoke tests **on Linux**. Extension panel regressions ran in a real Chromium MV3 environment. Current Windows CI is a separate check; do not substitute the older 0.8.0 result for the new package's result.
+1. Add `https://m2g.pro/browser-core/mcp` as an OAuth MCP connector to ChatGPT or Claude.
+2. Sign in through [@OpsTetherBot](https://t.me/OpsTetherBot?start=browsercore). Account OAuth codes and one-time worker pairing codes are separate.
+3. Install the Mac/Linux worker or select limited Cloud. For existing Chrome tabs, use **Load unpacked** on the Chrome extension folder containing `manifest.json`; then grant the tab.
+4. Reuse suitable live sessions and the same verified account across both AI clients. Avoid duplicate workers and hidden switches to Cloud.
 
-The owner previously verified real Telegram draft input on Mac with the 0.7.12 DOM engine, retained in 0.7.14. This release synchronization does not claim a newly completed Telegram send, a new Mac installer acceptance test or universal website compatibility.
+[Detailed setup](docs/getting-started.md) · [Claude](docs/claude.md) · [Windows](docs/windows-beta.md)
 
-Desktop packages are unsigned; Mac is not notarized. Python 3.10–3.13 is required. Windows runs a separate Chromium and **does not attach to existing Chrome/Edge tabs**. Hosted Cloud is not persistent, unlimited, independently audited or covered by a commercial SLA. Browser Core is not claimed faster or more reliable than competitors without comparable benchmarks.
+## Security and limits
 
-## Privacy and commercial status
+Browser Core is not independently security-audited or certified to SOC 2/ISO. Passwords, tokens, cookies and chat content must not be logged or pasted into AI messages. The new beta updater signs packages and refuses unexpected permissions, paths and files; it does not make downloaded binaries notarized or guarantee a malicious operating system cannot read secrets.
 
-Only the authenticated account's workers and permitted tabs are routed to it. Do not publish cookies, passwords, bot tokens or private messages in diagnostics. No independent no-leak guarantee, SOC 2 or ISO certification is claimed.
+Hosted Cloud is a separate ephemeral two-slot beta, with 30 minutes per session and 120 minutes per account daily; no commercial autoscaling. Desktop workers require the user's hardware. The Mac build is unsigned/unnotarized and needs Python 3.10–3.13. No universal browser-website guarantee or commercial SLA is claimed.
 
-YooKassa merchant approval and key verification are complete, but checkout, receipts and delivery acceptance are not complete; **sales remain off**. Telegram Stars sales for Browser Core and secure credential handoff are also not enabled. Do not buy beta access codes from third parties.
+Merchant credentials for YooKassa are configured, but live Browser Core purchases, receipts, paid-entitlement delivery and Stars settlement are **off** pending acceptance tests. The experimental secure credential-transfer service is **not yet shipped**. [Roadmap](docs/roadmap.md).
 
-Website: https://browser.m2g.pro/ · Support: https://browser.m2g.pro/support · Privacy: https://browser.m2g.pro/privacy · Terms: https://browser.m2g.pro/terms
+Website: [browser.m2g.pro](https://browser.m2g.pro) · [Support](https://browser.m2g.pro/support) · [Privacy](https://browser.m2g.pro/privacy) · [Terms](https://browser.m2g.pro/terms)
 
-Official MCP Registry identity: `io.github.ShuhLab/browser-core`. This repository contains public documentation, metadata and QA workflows; the backend remains proprietary.
+The public repository contains release metadata, docs and CI; the backend remains proprietary.

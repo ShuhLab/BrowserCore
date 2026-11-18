@@ -1,26 +1,14 @@
-# Windows standalone beta 0.8.1
+# Windows standalone beta 0.8.4-beta
 
-Download: https://browser.m2g.pro/downloads/BrowserCore-Windows-Standalone-0.8.1-beta.zip
+Download: https://browser.m2g.pro/downloads/BrowserCore-Windows-Standalone-0.8.4-beta.zip
 
-SHA-256: `22e5c7f3fb7d926e3c51f89800efc1aa10478af9226c611e91fd050a14869dec`
+SHA-256: `646ca5cd6dc37a200657ee5df55ad7b40eae7713208f2ef7fdf00080c743a54b`
 
-Contains current agent code 0.7.14-beta. The package number is separate from the agent number. It remains an unsigned experimental standalone browser distribution, not a complete Windows desktop product.
+The package includes worker 0.7.18-beta. The standalone browser uses Playwright Chromium and an outbound worker, with encrypted local profile storage and manual takeover for login. Python 3.10–3.13 must already be installed.
 
-## Available
+Not included: attachment to existing Chrome/Edge tabs; a user-level always-on Windows updater; signed installer; bundled Python runtime; arbitrary provider credential capture.
 
-- A separate Playwright Chromium browser, outbound paired worker connection and user-scoped profile storage.
-- MCP navigation, forms, snapshots, screenshots and brief manual takeover.
-- Shared account access from ChatGPT and Claude.
-
-## Not available
-
-- Attachment to existing Windows Chrome/Edge tabs; the Unix peer-credential bridge is explicitly not started on Windows.
-- Authenticode signing, bundled Python, silent updates or a commercial SLA.
-- Secure browser-to-server credential capture or enabled paid checkout.
-
-## Install
-
-Extract the archive to a folder you own. Python 3.10–3.13 must already be installed. Use normal-user PowerShell, not an Administrator session:
+Extract to a user-owned folder. From non-administrator PowerShell run:
 
 ```powershell
 .\installers\windows\check.ps1
@@ -28,10 +16,6 @@ Extract the archive to a folder you own. Python 3.10–3.13 must already be inst
 .\installers\windows\start.ps1
 ```
 
-Create a separate Local worker-pairing code through the authenticated Browser Core MCP client. Enter it at the local prompt. Never paste passwords or API keys in chat. Stop the foreground worker with Ctrl+C.
+This release was built and tested on Linux for source imports. A **new Windows GitHub Actions smoke test must pass** for this exact checksum before describing it as Windows-verified. The historical Windows 0.8.1 run is not evidence for 0.8.4.
 
-## Verification
-
-The exact 0.8.1 archive has passed extracted-module imports and real local Chromium smoke tests on Linux. The Windows workflow now downloads this archive with its pinned digest and runs a real Chromium smoke test on Windows. Its current run result is authoritative; do not treat the historical 0.8.0 Windows pass as a pass for 0.8.1.
-
-[Current Windows workflow](../.github/workflows/windows-standalone-qa.yml) · [Current release](current-release.md)
+[Current release](current-release.md) · [Signed updates on Mac/Linux](auto-updates.md)
