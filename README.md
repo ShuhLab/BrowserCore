@@ -9,16 +9,16 @@
 | Component | Version | Package |
 |---|---|---|
 | Hosted MCP server | 0.8.4-beta | [Endpoint](https://m2g.pro/browser-core/mcp) |
-| Mac agent and OneClick installer | 0.7.19-beta | [Mac ZIP](https://browser.m2g.pro/downloads/BrowserCore-Mac-OneClick-0.7.19-beta.zip) |
-| Chrome extension | 0.7.19 | [Extension ZIP](https://browser.m2g.pro/downloads/BrowserCore-Extension-0.7.19.zip) |
-| Linux BYO worker | 0.7.19-beta | [Linux TAR.GZ](https://browser.m2g.pro/downloads/BrowserCore-Linux-BYO-0.7.19-beta.tar.gz) |
-| Windows standalone | 0.8.4-beta | [Windows ZIP](https://browser.m2g.pro/downloads/BrowserCore-Windows-Standalone-0.8.5-beta.zip) |
+| Mac agent and OneClick installer | 0.7.22-beta | [Mac ZIP](https://browser.m2g.pro/downloads/BrowserCore-Mac-OneClick-0.7.22-installer-beta.zip) |
+| Chrome extension | 0.7.22 | [Extension ZIP](https://browser.m2g.pro/downloads/BrowserCore-Extension-0.7.22.zip) |
+| Linux BYO worker | 0.7.21-beta | [Linux TAR.GZ](https://browser.m2g.pro/downloads/BrowserCore-Linux-BYO-0.7.21-beta.tar.gz) |
+| Windows standalone | 0.8.5-beta | [Windows ZIP](https://browser.m2g.pro/downloads/BrowserCore-Windows-Standalone-0.8.5-beta.zip) |
 
 [Current release manifest](RELEASE.json) · [SHA-256 checksums](RELEASE_SHA256.txt) · [Release verification](docs/current-release.md)
 
 ## Signed automatic updates (new)
 
-**Mac and Linux:** one bootstrap installation of **0.7.19-beta** enables a user-level updater. It checks the fixed Browser Core HTTPS origin every two hours, verifies a pinned **Ed25519 signature**, checks exact ZIP/TAR SHA-256 and size, validates source paths/permissions and stages the next immutable version. It applies only when the worker reports no active sessions, no shared tabs and no in-flight jobs; otherwise the update is deferred. Mac shows auto-update on/off and a manual check in its menu bar. Linux uses a `systemd --user` timer.
+**Mac and Linux:** a compatible installation enables a user-level updater. The signed v2 feed currently offers 0.7.21; Mac 0.7.22 requires an attended installer. It checks the fixed Browser Core HTTPS origin every two hours, verifies a pinned **Ed25519 signature**, checks exact ZIP/TAR SHA-256 and size, validates source paths/permissions and stages the next immutable version. It applies only when the worker reports no active sessions, no shared tabs and no in-flight jobs; otherwise the update is deferred. Mac shows auto-update on/off and a manual check in its menu bar. Linux uses a `systemd --user` timer.
 
 The unpacked Chrome extension includes a local version-file watcher. After the updater installs a signed release, it reloads its own files. **Older extensions cannot install this watcher themselves**: the one-time bootstrap is required. A current working 0.7.14 extension remains compatible with an older 0.7.12 Mac agent; do not interrupt a task to align version numbers.
 
@@ -57,6 +57,12 @@ The public repository contains release metadata, docs and CI; the backend remain
 
 ## Protected credential handoff (new beta)
 
-Browser Core 0.7.19 adds a popup-only **Connect API credential** flow for a registered server destination. The user must choose a destination and select the secret directly in an authorized browser tab; it is encrypted before transport and is not returned to the model. The private server receiver verifies the destination identity and stores the credential under private file permissions. For now only the Community Pilot Telegram destination is registered. The feature has passed synthetic Chromium and native IPC tests, but **real Mac approval and provider setup remain to be verified**. Do not paste keys in ChatGPT/Claude; do not confuse a saved credential with activation of billing or the target service.
+Browser Core 0.7.19 introduced a popup-only **Connect API credential** flow for a registered server destination. The user must choose a destination and select the secret directly in an authorized browser tab; it is encrypted before transport and is not returned to the model. The private server receiver verifies the destination identity and stores the credential under private file permissions. For now only the Community Pilot Telegram destination is registered. The feature has passed synthetic Chromium and native IPC tests, but **real Mac approval and provider setup remain to be verified**. Do not paste keys in ChatGPT/Claude; do not confuse a saved credential with activation of billing or the target service.
 
 Commands to the *same* authorized tab now execute sequentially; commands to different tabs may run concurrently. A bounded per-tab queue protects resources, not a website-wide tab limit. Pause and revoke block queued work; operation IDs remain idempotent.
+
+## Mac 0.7.22 audio beta acceptance
+
+The owner confirmed agent and Chrome extension **0.7.22** on the same Mac, including an explicitly granted Instagram tab, connected tab audio, and a 20-second audio fragment at the ready state. Server-side speech transcription through this MCP client is **not yet verified**. The user's video must be unmuted in the webpage; the Mac output volume can be zero. No microphone or passive recording is used. 
+
+Automatic updating is still separate: the **signed v2 feed currently advertises 0.7.21**, not 0.7.22. See [current release](docs/current-release.md).
