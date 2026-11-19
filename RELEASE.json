@@ -1,32 +1,34 @@
 {
   "release_status": "technical_beta",
-  "server_version": "0.8.5-beta",
-  "agent_version": "0.7.19-beta",
-  "extension_version": "0.7.19",
+  "server_version": "0.8.4-beta",
+  "agent_version": "0.7.22-beta",
+  "linux_agent_version": "0.7.21-beta",
+  "extension_version": "0.7.22",
   "windows_package_version": "0.8.5-beta",
   "autoupdate": {
     "channel": "beta",
-    "manifest_url": "https://browser.m2g.pro/downloads/browsercore-beta-updates-v1.json",
-    "signature_url": "https://browser.m2g.pro/downloads/browsercore-beta-updates-v1.sig",
+    "manifest_url": "https://browser.m2g.pro/downloads/browsercore-beta-updates-v2.json",
+    "signature_url": "https://browser.m2g.pro/downloads/browsercore-beta-updates-v2.sig",
     "ed25519_public_key_hex": "ad1f40ce4961e1c512793a6a101bea4f7a3a1201d6e3983de65bc11adadc0b70",
     "macos_linux": true,
     "windows": false,
-    "bootstrap_required": true
+    "bootstrap_required": true,
+    "note": "Signed v2 feed currently offers 0.7.21; Mac 0.7.22 is an attended installer, not yet an unattended auto-update."
   },
   "payments_enabled": false,
-  "secret_handoff_enabled": false,
+  "secret_handoff_enabled": true,
   "artifacts": [
     {
-      "filename": "BrowserCore-Mac-OneClick-0.7.19-beta.zip",
-      "url": "https://browser.m2g.pro/downloads/BrowserCore-Mac-OneClick-0.7.19-beta.zip",
-      "sha256": "97b4634dddd4952fe369e28d6094dbe0709ee20481b8ea4767eefe584a487858",
-      "size_bytes": 375535
+      "filename": "BrowserCore-Mac-OneClick-0.7.22-installer-beta.zip",
+      "url": "https://browser.m2g.pro/downloads/BrowserCore-Mac-OneClick-0.7.22-installer-beta.zip",
+      "sha256": "aec6d6d41a0d51a31f2ed27c11f3f7a8c4323aa1c138eab3ed446f5d6a697432",
+      "size_bytes": 437570
     },
     {
-      "filename": "BrowserCore-Linux-BYO-0.7.19-beta.tar.gz",
-      "url": "https://browser.m2g.pro/downloads/BrowserCore-Linux-BYO-0.7.19-beta.tar.gz",
-      "sha256": "94f5823c087140fad621d77a05c93b3179f74937cb7a52ed02d630253cb8de5e",
-      "size_bytes": 61651
+      "filename": "BrowserCore-Linux-BYO-0.7.21-beta.tar.gz",
+      "url": "https://browser.m2g.pro/downloads/BrowserCore-Linux-BYO-0.7.21-beta.tar.gz",
+      "sha256": "1211d169b8b1d9da0b6d76c3d235c05d5c2f06ee94b08ff7463a09b5791dc8a1",
+      "size_bytes": 69866
     },
     {
       "filename": "BrowserCore-Windows-Standalone-0.8.5-beta.zip",
@@ -35,10 +37,10 @@
       "size_bytes": 74735
     },
     {
-      "filename": "BrowserCore-Extension-0.7.19.zip",
-      "url": "https://browser.m2g.pro/downloads/BrowserCore-Extension-0.7.19.zip",
-      "sha256": "0d5fbdc126ff448d260fd18ae3b70444bbbcfb804c39ac1880ba94680fd3c641",
-      "size_bytes": 25169
+      "filename": "BrowserCore-Extension-0.7.22.zip",
+      "url": "https://browser.m2g.pro/downloads/BrowserCore-Extension-0.7.22.zip",
+      "sha256": "c2d45c03b942f534c168475ee33fb716b3fc6541b04141199753bb1f1f311bec",
+      "size_bytes": 37228
     }
   ]
 }
