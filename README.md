@@ -67,8 +67,12 @@ The owner confirmed agent and Chrome extension **0.7.22** on the same Mac, inclu
 
 Automatic updating is still separate: the **signed v2 feed currently advertises 0.7.21**, not 0.7.22. See [current release](docs/current-release.md).
 
-## Planned Local/BYO free allowance and paid access (19 November 2026)
+## Pricing and free beta roadmap — 19 November 2026
 
-The proposed post-beta allowance is **7 active UTC calendar days per month** with a maximum of **250 successful billable MCP actions per active day**, shared by the same verified account across ChatGPT and Claude. Non-successful requests and non-billable status/permission operations should not consume this allowance. Unused days do not roll over.
+**Not yet an active billing offer.** The planned free tier is **100 one-time starter browser automation steps per verified account**, with free rate-limited page search and reading. User-approved tab audio is planned free for **one tab at a time**, up to **20 minutes of actual recorded audio per UTC day**; idle time does not count. Failed operations do not consume steps.
 
-After the allowance, proposed **one-time** 30-day Local/BYO packages are Local (149 RUB or 150 Telegram Stars; 10,000 actions) and Local Pro (399 RUB or 400 Stars; 50,000 actions), without automated recurring charges. Hosted Cloud remains separately limited. YooKassa direct website checkout and Telegram Stars bot payments are **not yet live**: receipts, real purchase/refund acceptance, and enforcement through the public MCP route remain gated. The local seven-day ledger passed tests but is not yet enforced on the public MCP endpoint. See [pricing](https://browser.m2g.pro/pricing) and [offer](https://browser.m2g.pro/offer).
+Based on TinyFish's published 19 November 2026 rates ([pricing](https://www.tinyfish.ai/pricing)), Browser Core targets **$0.008 per comparable automation step** versus TinyAgent $0.016, and **$0.001 per hosted-browser minute** versus TinyBrowser $0.002, *subject to verified unit economics*. These are targets, not currently purchasable prices or guarantees of feature parity: TinyAgent bundles model inference, residential proxies and anti-bot infrastructure, while our Local/BYO package does not.
+
+The prior 149/399 RUB Local/BYO package amounts remain a separate unactivated preview and should not be interpreted as equivalent to per-step USD rates. Checkout is currently disabled; active free quotas are not yet enforced through the public MCP endpoint. The staged starter/audio ledger passed bounded quota checks, but full end-to-end payment and audio enforcement are incomplete.
+
+[Pricing](https://browser.m2g.pro/pricing) · [Offer](https://browser.m2g.pro/offer)
