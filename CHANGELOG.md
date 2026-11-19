@@ -1,3 +1,12 @@
+## Browser Core 0.7.22-beta — 19 November 2026
+
+- Published full Mac installer and Chrome unpacked extension 0.7.22, plus an extension-only ZIP and checksums at both download mirrors.
+- Fixed Chrome tab-audio stream-ID creation by moving capture earlier in the popup flow and adding a scoped fallback; added diagnostic details to the popup.
+- On the owner's Mac, agent and extension 0.7.22 connected, an Instagram tab was granted, tab audio became enabled, and the user confirmed a completed 20-second capture. Server-side transcription via this connected MCP client is not yet verified.
+- Mac package includes local SSL certificate store fix and the complete inventory for future updates. Linux remains 0.7.21-beta and Windows remains 0.8.5-beta.
+- Signed automatic-update feed v2 still advertises 0.7.21-beta. Mac 0.7.22 uses an attended installer and future-version unattended updating remains unverified.
+- No changes to billing; paid checkout is still disabled.
+
 ## Browser Core 0.7.19-beta — 18 November 2026
 
 - Added a registered-destination, popup-confirmed, encrypted API-key handoff channel, isolated from ordinary MCP snapshots and action arguments. Private UNIX-socket receiver authenticated by owner/worker identity and signed local approval. Only synthetic secrets were used in tests; first real Mac/provider transfer remains pending.
