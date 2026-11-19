@@ -6,7 +6,7 @@ Connect `https://m2g.pro/browser-core/mcp` via OAuth in **ChatGPT or Claude**. T
 
 ## Mac
 
-1. Download [Mac 0.7.19-beta](https://browser.m2g.pro/downloads/BrowserCore-Mac-OneClick-0.7.19-beta.zip). Extract and run `Install Browser Core.app`. This is unsigned beta software; do not disable macOS security globally.
+1. Download [Mac 0.7.22-beta](https://browser.m2g.pro/downloads/BrowserCore-Mac-OneClick-0.7.22-installer-beta.zip). Extract and run `Install Browser Core.app`. This is unsigned beta software; do not disable macOS security globally.
 2. It preserves pairing/profiles and installs a user-level signed-update check. Approve a restart only when ready to interrupt a live browser.
 3. Chrome → chrome://extensions → Load unpacked. Choose `~/Library/Application Support/BrowserCore/Extension` or the extension-only extracted folder containing `manifest.json`.
 4. Permit only the desired tabs in the popup. The extension shows only connected tabs.
@@ -16,7 +16,7 @@ An older Mac 0.7.12-beta agent still works with extension 0.7.14; there is no re
 
 ## Linux
 
-Review https://browser.m2g.pro/downloads/install-linux.sh and execute it as an unprivileged user. It installs worker 0.7.19-beta, pins the package SHA-256, and creates a `systemd --user` updater timer. Existing desktop Chrome tabs are not attached by this package.
+Review https://browser.m2g.pro/downloads/install-linux.sh and execute it as an unprivileged user. It installs worker 0.7.21-beta, pins the package SHA-256, and creates a `systemd --user` updater timer. Existing desktop Chrome tabs are not attached by this package.
 
 ## Windows
 
@@ -31,3 +31,11 @@ Users enter passwords, OAuth, 2FA and CAPTCHA in their own browser during handof
 ## Connecting a registered provider API key (beta)
 
 Open the provider's authorized browser tab, grant it to Browser Core and select only the credential text. In the extension popup choose the **registered destination** and confirm. The credential is encrypted in the tab and sent through the paired native worker to the private server receiver. The model sees only status. Do not paste the key in the chat or ordinary form-action arguments. The tab stays paused until you remove any secret from the screen and manually resume. Only the separate Community Pilot Telegram destination is currently registered; first real Mac/provider acceptance is pending. The target service and payments are not switched on simply by saving a credential.
+
+## Tab audio for short videos (Mac/Chrome 0.7.22)
+
+Open a short video in an explicitly authorized Chrome tab. In Browser Core's popup, enable optional audio capture permissions and click **Connect audio**. Once connected, click **Record 20 seconds** while the video's own audio is unmuted. A ready clip is not a text transcript; a separate MCP transcription tool call is required. Chrome may show an offscreen audio document in extension diagnostics; the microphone is not used.
+
+If Chrome still shows 0.7.19, inspect the unpacked-extension source directory. Loading it from an old Downloads folder does not receive the managed update. Use `~/Library/Application Support/BrowserCore/Extension`, with a fresh tab grant if Chrome resets the previous permission.
+
+The signed v2 updater currently advertises 0.7.21; Mac 0.7.22 requires the attended installer. Windows remains a separate standalone beta.
