@@ -66,3 +66,9 @@ Commands to the *same* authorized tab now execute sequentially; commands to diff
 The owner confirmed agent and Chrome extension **0.7.22** on the same Mac, including an explicitly granted Instagram tab, connected tab audio, and a 20-second audio fragment at the ready state. Server-side speech transcription through this MCP client is **not yet verified**. The user's video must be unmuted in the webpage; the Mac output volume can be zero. No microphone or passive recording is used. 
 
 Automatic updating is still separate: the **signed v2 feed currently advertises 0.7.21**, not 0.7.22. See [current release](docs/current-release.md).
+
+## Planned Local/BYO free allowance and paid access (19 November 2026)
+
+The proposed post-beta allowance is **7 active UTC calendar days per month** with a maximum of **250 successful billable MCP actions per active day**, shared by the same verified account across ChatGPT and Claude. Non-successful requests and non-billable status/permission operations should not consume this allowance. Unused days do not roll over.
+
+After the allowance, proposed **one-time** 30-day Local/BYO packages are Local (149 RUB or 150 Telegram Stars; 10,000 actions) and Local Pro (399 RUB or 400 Stars; 50,000 actions), without automated recurring charges. Hosted Cloud remains separately limited. YooKassa direct website checkout and Telegram Stars bot payments are **not yet live**: receipts, real purchase/refund acceptance, and enforcement through the public MCP route remain gated. The local seven-day ledger passed tests but is not yet enforced on the public MCP endpoint. See [pricing](https://browser.m2g.pro/pricing) and [offer](https://browser.m2g.pro/offer).
