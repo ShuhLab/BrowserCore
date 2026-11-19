@@ -1,4 +1,4 @@
-97b4634dddd4952fe369e28d6094dbe0709ee20481b8ea4767eefe584a487858  BrowserCore-Mac-OneClick-0.7.19-beta.zip
-94f5823c087140fad621d77a05c93b3179f74937cb7a52ed02d630253cb8de5e  BrowserCore-Linux-BYO-0.7.19-beta.tar.gz
+aec6d6d41a0d51a31f2ed27c11f3f7a8c4323aa1c138eab3ed446f5d6a697432  BrowserCore-Mac-OneClick-0.7.22-installer-beta.zip
+1211d169b8b1d9da0b6d76c3d235c05d5c2f06ee94b08ff7463a09b5791dc8a1  BrowserCore-Linux-BYO-0.7.21-beta.tar.gz
 9884d0d81f835cfadff39eec1cca4ea7dd90459acf4ba1abefe69ad9cd8db51d  BrowserCore-Windows-Standalone-0.8.5-beta.zip
-0d5fbdc126ff448d260fd18ae3b70444bbbcfb804c39ac1880ba94680fd3c641  BrowserCore-Extension-0.7.19.zip
+c2d45c03b942f534c168475ee33fb716b3fc6541b04141199753bb1f1f311bec  BrowserCore-Extension-0.7.22.zip
