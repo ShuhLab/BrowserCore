@@ -17,3 +17,11 @@ Chrome cannot download a new unpacked extension from a server itself. Its local 
 Windows has no unattended updater. Mac installers are not Apple signed or notarized. Never disable TLS certificate verification to make updates work; the Mac installer uses the certifi CA store. Paid checkout remains disabled.
 
 **Recovery limitations:** Version 0.7.23 keeps explicit tab grants across extension worker restarts using local storage. Restoring a tab after a full browser restart with a changed tab ID may require a separate host-permission opt-in, not included in 0.7.23. Never restore manually revoked or paused access automatically.
+
+## 0.7.24 server-signalled update / tab restoration preview
+
+An **attended 0.7.24 preview**, with optional persistent per-site Chrome permissions, is available: [Mac](https://browser.m2g.pro/downloads/BrowserCore-Mac-OneClick-0.7.24-beta.zip), [Chrome extension](https://browser.m2g.pro/downloads/BrowserCore-Extension-0.7.24.zip), [Linux BYO](https://browser.m2g.pro/downloads/BrowserCore-Linux-BYO-0.7.24-beta.tar.gz). SHA-256 checksum files accompany each package.
+
+The new implementation accepts only an authenticated server release hint, checks a fixed-origin Ed25519-signed update manifest and applies the package after actions drain. Existing Chrome tab grants are restored from trusted local extension storage only when **each origin was individually opted in** (Instagram, TikTok, YouTube, or YouTube Studio). Revoked permissions, ambiguous tab matches, active managed browser sessions, manual takeover, queued writes and audio capture prevent an automatic restart. A changed Chrome optional-permission allowlist means **0.7.24 requires an attended bootstrap** from older clients.
+
+**Not live as a signed push update:** the new v3 signed feed is pending authorized release signing, and the owner's Mac was last verified at agent/extension 0.7.22. The existing signed v2 channel remains at 0.7.23. The preview passed source, packaging, isolated update/rollback and grant-recovery tests; real Mac unattended update/recovery acceptance is still pending. This documentation does **not** assert that the server-signalled rollout is enabled.
