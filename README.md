@@ -9,9 +9,9 @@
 | Component | Version | Package |
 |---|---|---|
 | Hosted MCP server | 0.8.4-beta | [Endpoint](https://m2g.pro/browser-core/mcp) |
-| Mac agent and OneClick installer | 0.7.22-beta | [Mac ZIP](https://browser.m2g.pro/downloads/BrowserCore-Mac-OneClick-0.7.22-installer-beta.zip) |
-| Chrome extension | 0.7.22 | [Extension ZIP](https://browser.m2g.pro/downloads/BrowserCore-Extension-0.7.22.zip) |
-| Linux BYO worker | 0.7.21-beta | [Linux TAR.GZ](https://browser.m2g.pro/downloads/BrowserCore-Linux-BYO-0.7.21-beta.tar.gz) |
+| Mac agent and OneClick installer | 0.7.23-beta | [Mac ZIP](https://browser.m2g.pro/downloads/BrowserCore-Mac-OneClick-0.7.23-beta.zip) |
+| Chrome extension | 0.7.23 | [Extension ZIP](https://browser.m2g.pro/downloads/BrowserCore-Extension-0.7.23.zip) |
+| Linux BYO worker | 0.7.23-beta | [Linux TAR.GZ](https://browser.m2g.pro/downloads/BrowserCore-Linux-BYO-0.7.23-beta.tar.gz) |
 | Windows standalone | 0.8.5-beta | [Windows ZIP](https://browser.m2g.pro/downloads/BrowserCore-Windows-Standalone-0.8.5-beta.zip) |
 
 [Current release manifest](RELEASE.json) · [SHA-256 checksums](RELEASE_SHA256.txt) · [Release verification](docs/current-release.md)
@@ -25,6 +25,8 @@ The unpacked Chrome extension includes a local version-file watcher. After the u
 **Windows** still has manual updates. It is an unsigned separate-Chromium beta without native existing-Chrome-tab attachment, a bundled runtime, or Windows unattended updater. Do not promise background updates on Windows yet.
 
 Signing public key (Ed25519, hex): `ad1f40ce4961e1c512793a6a101bea4f7a3a1201d6e3983de65bc11adadc0b70`. No private signing key is included in an installer. [Update protocol](docs/auto-updates.md).
+
+> **Grant recovery (0.7.23):** The extension now persists explicitly granted tab state across extension worker restarts; manual Pause and Revoke remain authoritative. Restoration across a full browser restart when tab IDs change is not yet automatic, and will require separately approved site permissions. The managed Chrome extension must be loaded from the Mac installation folder.
 
 ## Existing Chrome tab experience
 
