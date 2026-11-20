@@ -1,3 +1,12 @@
+## 0.7.26-beta (attended preview) — 20 November 2026
+
+- Same-origin child tabs opened by an agent action inherit the parent's explicitly approved site scope, including a new child handle for subsequent MCP work.
+- Agent-triggered link popups are scoped by opener tab and a brief command window; site-generated/unrelated popups never inherit access.
+- Root pause/revoke/site-permission removal propagates to children; cross-origin navigation does not inherit rights.
+- Optional HTTPS host permission is requested for the **current exact origin**, not enabled for all websites. Audio is always separately consented.
+- Direct child opens now retain URL query/fragment for navigation while persisting only sanitized origin/path.
+- Signed feed is still 0.7.23; this is a verified attended preview, not an automatic user deployment.
+
 ## Browser Core 0.7.22-beta — 19 November 2026
 
 - Published full Mac installer and Chrome unpacked extension 0.7.22, plus an extension-only ZIP and checksums at both download mirrors.
