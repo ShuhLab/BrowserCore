@@ -78,3 +78,11 @@ Based on TinyFish's published 19 November 2026 rates ([pricing](https://www.tiny
 The prior 149/399 RUB Local/BYO package amounts remain a separate unactivated preview and should not be interpreted as equivalent to per-step USD rates. Checkout is currently disabled; active free quotas are not yet enforced through the public MCP endpoint. The staged starter/audio ledger passed bounded quota checks, but full end-to-end payment and audio enforcement are incomplete.
 
 [Pricing](https://browser.m2g.pro/pricing) · [Offer](https://browser.m2g.pro/offer)
+
+## 0.7.24 attended recovery preview (20 November 2026)
+
+An **attended 0.7.24 preview**, with optional persistent per-site Chrome permissions, is available: [Mac](https://browser.m2g.pro/downloads/BrowserCore-Mac-OneClick-0.7.24-beta.zip), [Chrome extension](https://browser.m2g.pro/downloads/BrowserCore-Extension-0.7.24.zip), [Linux BYO](https://browser.m2g.pro/downloads/BrowserCore-Linux-BYO-0.7.24-beta.tar.gz). SHA-256 checksum files accompany each package.
+
+The new implementation accepts only an authenticated server release hint, checks a fixed-origin Ed25519-signed update manifest and applies the package after actions drain. Existing Chrome tab grants are restored from trusted local extension storage only when **each origin was individually opted in** (Instagram, TikTok, YouTube, or YouTube Studio). Revoked permissions, ambiguous tab matches, active managed browser sessions, manual takeover, queued writes and audio capture prevent an automatic restart. A changed Chrome optional-permission allowlist means **0.7.24 requires an attended bootstrap** from older clients.
+
+**Not live as a signed push update:** the new v3 signed feed is pending authorized release signing, and the owner's Mac was last verified at agent/extension 0.7.22. The existing signed v2 channel remains at 0.7.23. The preview passed source, packaging, isolated update/rollback and grant-recovery tests; real Mac unattended update/recovery acceptance is still pending. This documentation does **not** assert that the server-signalled rollout is enabled.
