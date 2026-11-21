@@ -4,7 +4,11 @@
 
 **Current status: technical beta.** Paid checkout and browser-to-server credential provisioning are not yet enabled. Free beta access is not a promise of unlimited or permanently free Local/BYO usage.
 
-## Latest verified releases
+## Latest attended preview: 0.7.26
+
+**0.7.26** introduces delegated same-origin child-tab access, available as a separately installed beta for [Mac](https://browser.m2g.pro/downloads/BrowserCore-Mac-OneClick-0.7.26-beta.zip), [Chrome](https://browser.m2g.pro/downloads/BrowserCore-Extension-0.7.26.zip), and [Linux](https://browser.m2g.pro/downloads/BrowserCore-Linux-BYO-0.7.26-beta.tar.gz). This release requires explicit, per-site browser permission. The owner Mac has not completed real acceptance. **Automatic signed updates remain at 0.7.23**, not 0.7.26.
+
+## Current signed beta releases
 
 | Component | Version | Package |
 |---|---|---|
@@ -18,9 +22,9 @@
 
 ## Signed automatic updates (new)
 
-**Mac and Linux:** a compatible installation enables a user-level updater. The signed v2 feed currently offers 0.7.21; Mac 0.7.22 requires an attended installer. It checks the fixed Browser Core HTTPS origin every two hours, verifies a pinned **Ed25519 signature**, checks exact ZIP/TAR SHA-256 and size, validates source paths/permissions and stages the next immutable version. It applies only when the worker reports no active sessions, no shared tabs and no in-flight jobs; otherwise the update is deferred. Mac shows auto-update on/off and a manual check in its menu bar. Linux uses a `systemd --user` timer.
+**Mac and Linux:** a compatible installation enables a user-level updater. The signed v2 feed currently offers 0.7.23. Preview 0.7.26 requires an attended installation; the server-triggered v3 signed channel has not been activated. It checks the fixed Browser Core HTTPS origin every two hours, verifies a pinned **Ed25519 signature**, checks exact ZIP/TAR SHA-256 and size, validates source paths/permissions and stages the next immutable version. It applies only when the worker reports no active sessions, no shared tabs and no in-flight jobs; otherwise the update is deferred. Mac shows auto-update on/off and a manual check in its menu bar. Linux uses a `systemd --user` timer.
 
-The unpacked Chrome extension includes a local version-file watcher. After the updater installs a signed release, it reloads its own files. **Older extensions cannot install this watcher themselves**: the one-time bootstrap is required. A current working 0.7.14 extension remains compatible with an older 0.7.12 Mac agent; do not interrupt a task to align version numbers.
+The unpacked Chrome extension includes a local version-file watcher. After the updater installs a signed release, it reloads its own files. **Older extensions cannot install this watcher themselves**: the one-time bootstrap is required. An older installed extension may remain loaded from Downloads instead of the managed folder. Do not interrupt a live task just to align version numbers.
 
 **Windows** still has manual updates. It is an unsigned separate-Chromium beta without native existing-Chrome-tab attachment, a bundled runtime, or Windows unattended updater. Do not promise background updates on Windows yet.
 
