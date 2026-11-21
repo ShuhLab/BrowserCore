@@ -13,7 +13,7 @@
     "macos_linux": true,
     "windows": false,
     "bootstrap_required": true,
-    "note": "Signed v2 feed offers 0.7.23-beta. Installed 0.7.22 clients defer update while shared tabs/sessions are active; the Mac extension must be loaded from the managed folder. This bridge build persists explicit tab grants for service-worker reload, but full Chrome restart reattachment requires a future optional host permission and explicit consent."
+    "note": "Signed beta v2 feed provides 0.7.23; installation on Mac 0.7.22 is deferred if shared tabs or sessions are active. Persistent grant recovery requires installed compatible extension. Full Chrome restart restoration may need additional user consent."
   },
   "payments_enabled": false,
   "secret_handoff_enabled": true,
