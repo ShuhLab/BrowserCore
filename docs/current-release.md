@@ -1,4 +1,8 @@
-# Current release — 20 November 2026
+# Current release — 21 November 2026
+
+**Latest attended preview:** Mac/Chrome/Linux **0.7.26-beta**, with child-tab delegation after per-site consent. [Mac](https://browser.m2g.pro/downloads/BrowserCore-Mac-OneClick-0.7.26-beta.zip) · [Chrome](https://browser.m2g.pro/downloads/BrowserCore-Extension-0.7.26.zip) · [Linux](https://browser.m2g.pro/downloads/BrowserCore-Linux-BYO-0.7.26-beta.tar.gz). These downloads are validated but are **not** distributed through the signed automatic update feed. Real owner-Mac acceptance is pending.
+
+**Current signed update channel:** 0.7.23-beta for Mac/Linux (Chrome extension 0.7.23). The table below describes the signed default downloads, not the newer attended preview.
 
 | Component | Version | Package |
 |---|---|---|
