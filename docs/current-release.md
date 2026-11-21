@@ -50,3 +50,16 @@ For Mac existing-tab automation, use the unchanged `existing_tab_action` MCP too
 The original navigation URL, including query parameters, is used for loading the child. Persistent permissions and the model-visible child handle store only the URL origin/path, not the query or fragment. A child is never attached across origins, and arbitrary browser popups cannot inherit permission. Parent pause propagates to children; parent revocation or disabling site delegation revokes all child handles without closing their browser tabs. Audio capture permission and recording require separate consent per tab.
 
 **Status:** isolated tests for same-origin/cross-origin navigation, browser popups, per-site permissions, password/session restrictions, native writer isolation, exactly-once operations, restoration, and signed-updater rollback passed. Both public download mirrors and SHA-256 checksums verified. Real owner-Mac acceptance is still outstanding. The current signed unattended feed remains at **0.7.23**; 0.7.26 is an attended preview and server-triggered signed installation is **not yet active**. Older installed agents/extensions will not gain this capability without upgrading.
+
+## Owner-Mac acceptance checklist — 0.7.26
+
+The current connected Mac agent and unpacked Chrome extension have been observed on **0.7.23**, not 0.7.26. The signed v2 updater also targets 0.7.23; therefore it cannot deliver this preview automatically.
+
+1. Before the attended upgrade, finish or pause active browser tasks. Do not close the actual Chrome social-network tabs or sign out of the sites.
+2. Download the [0.7.26 Mac OneClick installer](https://browser.m2g.pro/downloads/BrowserCore-Mac-OneClick-0.7.26-beta.zip). This ZIP is unsigned/notarized by Apple; do not disable Gatekeeper or other system security. Verify the [.sha256](https://browser.m2g.pro/downloads/BrowserCore-Mac-OneClick-0.7.26-beta.zip.sha256) if needed.
+3. Launch **Install Browser Core.app** in the extracted archive and follow the on-screen prompts. The existing worker identity and saved encrypted profiles must remain intact. A restart is deferred while a task cannot safely be interrupted.
+4. In `chrome://extensions`, confirm the Browser Core unpacked extension points to `~/Library/Application Support/BrowserCore/Extension` and displays **0.7.26**. Do not load the older copy from Downloads.
+5. Grant each original Instagram/TikTok/YouTube tab if Chrome discarded its old extension grant; enable **automatic child-tab access and recovery** on each site only by clicking its dedicated popup option. This grants exact-site scope, not access to the entire browser.
+6. Verify `existing_tabs_list` returns Mac agent **0.7.26-beta**, extension **0.7.26** and the expected tab handles. Exercise a harmless child-tab open, snapshot, pause/resume, then a simulated recovery and explicit revocation. Confirm that unrelated tabs never appear.
+
+**Production acceptance:** do not claim unattended server-push updates until the v3 signed manifest is published by the authorized signing workflow and a real Mac upgrade/reconnect/rollback cycle passes. The 0.7.26 preview does not replace the signed 0.7.23 default.
