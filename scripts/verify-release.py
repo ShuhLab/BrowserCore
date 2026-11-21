@@ -36,7 +36,11 @@ with zipfile.ZipFile(io.BytesIO(archives[mac_name])) as mac, zipfile.ZipFile(io.
         assert mac.read(packaged) == ext.read(name), 'Mac extension drift: ' + basename
     m = json.loads(ext.read(next(n for n in ext.namelist() if n.endswith('manifest.json'))))
     assert m['version'] == release['extension_version']
-    assert not m.get('optional_permissions') and not m.get('host_permissions')
+    # Chrome optional capabilities require a direct user gesture. They do not
+    # grant background access, unlike an always-on host permission.
+    assert set(m.get('optional_permissions', [])) == {'tabCapture', 'offscreen'}
+    assert not m.get('host_permissions')
+    assert not m.get('optional_host_permissions')
     assert set(m['permissions']) == {'activeTab', 'scripting', 'nativeMessaging', 'storage', 'alarms'}
 for language in ('', 'ru/', 'de/', 'fr/', 'es/', 'pt/', 'zh/', 'ar/', 'hi/', 'tr/'):
     page = get('https://browser.m2g.pro/' + language).decode()
