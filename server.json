@@ -2,12 +2,12 @@
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "io.github.ShuhLab/browser-core",
   "title": "Browser Core",
-  "description": "Browser MCP: local Chrome 0.7.22, Linux VPS and limited Cloud, with human handoff and OAuth.",
+  "description": "Browser MCP: Mac/Chrome 0.7.26 preview, Linux VPS, human handoff and OAuth.",
   "repository": {
     "url": "https://github.com/ShuhLab/BrowserCore",
     "source": "github"
   },
-  "version": "0.8.4-beta.1",
+  "version": "0.8.4-beta.2",
   "remotes": [
     {
       "type": "streamable-http",
