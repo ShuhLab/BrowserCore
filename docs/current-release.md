@@ -53,7 +53,7 @@ The original navigation URL, including query parameters, is used for loading the
 
 ## Owner-Mac acceptance checklist — 0.7.26
 
-The current connected Mac agent and unpacked Chrome extension have been observed on **0.7.23**, not 0.7.26. The signed v2 updater also targets 0.7.23; therefore it cannot deliver this preview automatically.
+On 22 November 2026, a live `existing_tabs_list` check on the owner's connected Mac Intel worker reported agent **0.7.26-beta** and explicitly shared Chrome tabs with extension **0.7.26**. This verifies the reported versions, **not** completion of the full owner-Mac acceptance checklist (child-tab delegation, pause/revoke, reconnect and rollback). The signed v2 updater still targets **0.7.23** and cannot deliver the 0.7.26 preview automatically.
 
 1. Before the attended upgrade, finish or pause active browser tasks. Do not close the actual Chrome social-network tabs or sign out of the sites.
 2. Download the [0.7.26 Mac OneClick installer](https://browser.m2g.pro/downloads/BrowserCore-Mac-OneClick-0.7.26-beta.zip). This ZIP is unsigned/notarized by Apple; do not disable Gatekeeper or other system security. Verify the [.sha256](https://browser.m2g.pro/downloads/BrowserCore-Mac-OneClick-0.7.26-beta.zip.sha256) if needed.
