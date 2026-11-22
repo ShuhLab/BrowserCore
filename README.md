@@ -71,7 +71,7 @@ Commands to the *same* authorized tab now execute sequentially; commands to diff
 
 The owner confirmed agent and Chrome extension **0.7.22** on the same Mac, including an explicitly granted Instagram tab, connected tab audio, and a 20-second audio fragment at the ready state. Server-side speech transcription through this MCP client is **not yet verified**. The user's video must be unmuted in the webpage; the Mac output volume can be zero. No microphone or passive recording is used. 
 
-Automatic updating is still separate: the **signed v2 feed currently advertises 0.7.21**, not 0.7.22. See [current release](docs/current-release.md).
+Automatic updating remains separate from the attended preview: the **signed v2 feed currently advertises 0.7.23**, not 0.7.26. See [current release](docs/current-release.md).
 
 ## Pricing and free beta roadmap — 19 November 2026
 
