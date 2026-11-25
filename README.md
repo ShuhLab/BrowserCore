@@ -4,7 +4,15 @@
 
 **Current status: technical beta.** Paid checkout and browser-to-server credential provisioning are not yet enabled. Free beta access is not a promise of unlimited or permanently free Local/BYO usage.
 
-## Latest attended preview: 0.7.26
+## Latest attended preview: 0.7.28 — P0 reliability + P1 Portal Bridge
+
+**New attended preview 0.7.28 (25 November 2026):** [Mac](https://browser.m2g.pro/downloads/BrowserCore-Mac-OneClick-0.7.28-beta.zip) · [Chrome extension](https://browser.m2g.pro/downloads/BrowserCore-Extension-0.7.28.zip) · [Linux](https://browser.m2g.pro/downloads/BrowserCore-Linux-BYO-0.7.28-beta.tar.gz).
+
+The P0 stage adds local, redacted operation receipts and reconnect diagnostics; the P1 Portal Bridge stage can preview and fill selected text fields between **two independently user-authorized tabs** with fingerprint validation and verified draft readback. No automated submit, file transfer, media upload, or payment. [Implementation, limitations, and exact tool usage](docs/p0-p1-portal-bridge-preview.md).
+
+The latest **signed automatic-update feed is 0.7.27**. This newer 0.7.28 build is an unsigned/notarized-by-Apple **attended technical preview**, not yet installed on the owner's Mac or tested end-to-end on two live business portals. Existing browser tabs and production services are unaffected.
+
+## Historical attended preview: 0.7.26
 
 **0.7.26** introduces delegated same-origin child-tab access, available as a separately installed beta for [Mac](https://browser.m2g.pro/downloads/BrowserCore-Mac-OneClick-0.7.26-beta.zip), [Chrome](https://browser.m2g.pro/downloads/BrowserCore-Extension-0.7.26.zip), and [Linux](https://browser.m2g.pro/downloads/BrowserCore-Linux-BYO-0.7.26-beta.tar.gz). This release requires explicit, per-site browser permission. The owner Mac has not completed real acceptance. **Automatic signed updates remain at 0.7.23**, not 0.7.26.
 
