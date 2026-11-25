@@ -1,3 +1,7 @@
+## Unreleased — P1 Portal Bridge context binding (25 November 2026)
+
+- Prevent stale draft writes after a changed document or URL, including query/fragment changes. Recheck grants and connection after asynchronous reads, block concurrent cancellation and expired queued applies. [Tests and limitations](docs/p1-portal-context-staging.md). Staging only; not included in 0.7.28.
+
 ## Unreleased — P0 delegated-tab isolation (25 November 2026)
 
 - Preserve manually paused children across root resume and restart; reject operations with invalid ancestors and cascade native revocation. Wait for authoritative extension state before resuming. Staging tests passed; not included in released packages. [Verification and limitations](docs/p0-delegated-tab-isolation-staging.md).
