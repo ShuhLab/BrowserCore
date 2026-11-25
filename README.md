@@ -6,6 +6,8 @@
 
 ## Latest attended preview: 0.7.28 — P0 reliability + P1 Portal Bridge
 
+**Unreleased P0 Portal Bridge replay safety (25 November 2026):** [Replay scope and verification](docs/p0-portal-replay-staging.md) — current grants and document context checked before cached apply; status is historical. Staging only, not in 0.7.28.
+
 **Unreleased P0 receipt safety correction (25 November 2026):** [Receipt scope and verification](docs/p0-receipt-scope-staging.md) — current grant and lineage required for cached replay; failed records cannot claim verified success. Staging only, not in 0.7.28.
 
 **Unreleased P1 safety correction — staging only (25 November 2026):** [Portal Bridge context binding](docs/p1-portal-context-staging.md) rejects stale previews after document/URL changes and handles revoked grants during preview. Synthetic tests passed; not included in 0.7.28. Live acceptance pending.
