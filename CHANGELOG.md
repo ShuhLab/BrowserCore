@@ -1,3 +1,7 @@
+## Unreleased — P0 native connection isolation (25 November 2026)
+
+- Bind requests and late results to the original native connection; ignore stale disconnects and stop dispatch if the connection changes during verification. [Tests and limitations](docs/p0-native-port-isolation-staging.md). Staging only; not in 0.7.28.
+
 ## Unreleased — P0 browser command overlap guard (25 November 2026)
 
 - Refuse overlapping remote commands on the same physical Chrome tab while the earlier handler has not settled; no automatic retry or cancellation. [Tests and limits](docs/p0-native-single-flight-staging.md). Staging only; not in 0.7.28.
