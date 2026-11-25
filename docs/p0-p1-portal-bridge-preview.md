@@ -41,3 +41,6 @@ Unsupported and intentionally blocked: protected/hidden/password/OTP/API-key fie
 ## Real acceptance and commercialization gates
 
 Before public availability, validate against two **owned, consenting test accounts** with representative category forms and media, test logout, network failure, CAPTCHA/human takeover, site redesign, refresh, duplicate operation IDs, partial results and recovery. Complete the signed-release and rollback review; do not expand Chrome permissions silently. Payment and quotas for Browser Core are separately gated and are not activated by this preview.
+
+> **Unreleased follow-up, 25 November 2026:** [P0 delegated-tab isolation correction](p0-delegated-tab-isolation-staging.md) is undergoing staging acceptance. It is not part of 0.7.28. Do not treat staged pause/revoke behavior as released.
+
