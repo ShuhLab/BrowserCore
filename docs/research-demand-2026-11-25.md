@@ -43,3 +43,16 @@ The scheduled daily task 'Browser Core — поиск задач' continues rota
 ### P0 DOM edit guard — 25 November 2026
 - [agent-browser #1920](https://github.com/vercel-labs/agent-browser/issues/1920), opened 18 September: user reports destruction of readonly/disabled input values while fill reports success. Related #2055 was recorded earlier; no independent demand count or willingness to pay inferred. Applicable to operator/developer/business forms without suitable official APIs. Prefer API/import when available, otherwise Playwright locator.fill or authorized Browser Core tabs. P0 safety should be included in base access. Small correction; no additional site permissions, no bypass and no guarantee against site autosave. Staging local commit 93089e8, seven adverse reproductions, all ten new Chromium cases pass; 69 Python unittest and 60 JS regressions pass; separate four Chromium context checks pass. [Details](p0-dom-edit-staging.md).
 - Next verification candidate: [agent-browser #1928](https://github.com/vercel-labs/agent-browser/issues/1928), issue listing dated 18 September, reports ambiguous option matches. Browser Core's current select code checks presence but not uniqueness of option value or disabled optgroup. This is a hypothesis pending isolated reproduction; no new feature or demand count claimed. P0 candidate before P1 Download Receipt.
+
+
+### P0 dropdown safety — staging verification
+
+## Verification
+Local staging branch `p0-select-guard-0734`, commit `4c1766a`, based on `93089e8`. The baseline failed 11 of 13 synthetic Chromium checks; the corrected code passed all 13. It rejects duplicate option values and disabled optgroups, refuses ambiguous controls, avoids redundant input/change events when already selected, and checks the actual option identity after events. Changes, replacement or delayed reversion are reported as uncertain, not success. Also passed: 69 Python cases, 60 JavaScript cases and 10 previous isolated Chromium edit cases.
+
+## Limits
+No new permissions, no real user profile or submission tested. Bounded 450 ms observation cannot establish server acceptance or prevent website-side autosave. Native installed-extension acceptance and release packaging remain pending. Public attended preview remains 0.7.28 and signed update feed remains 0.7.27. No new public feature or separate charge.
+
+## Demand
+[agent-browser #1928](https://github.com/vercel-labs/agent-browser/issues/1928), 18 September 2026: ambiguous dropdown options. [Playwright #4921](https://github.com/microsoft/playwright/issues/4921), 6 January 2021: historical dynamic-select failure. Alternatives include Playwright locator.selectOption and official portal APIs where available. The competitor's current release notes also describe ambiguity guards; this is essential safety parity, not evidence of unique demand or willingness to pay.
+
