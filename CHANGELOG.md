@@ -1,3 +1,7 @@
+## Unreleased — P0 confirmed pause after grant refresh (25 November 2026)
+
+- Apply a confirmed pause to the current entry of the original grant, not an obsolete object. [Tests and limitations](docs/p0-pause-reannounce-staging.md). Staging only; no new permissions or automatic retry.
+
 ## Unreleased — P0 native grant scope (25 November 2026)
 
 - Bind queued commands and late results to the original native grant scope; no automatic retries. [Tests, including three pre-existing updater failures, and limitations](docs/p0-native-grant-scope-staging.md). Staging only, not in 0.7.28.
