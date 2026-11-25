@@ -1,3 +1,7 @@
+## Unreleased — P0 tab queue lifecycle (25 November 2026)
+
+- Release idle per-tab command locks when the last queued command exits; preserve serialization. [Tests and limitations](docs/p0-tab-lock-lifecycle-staging.md). Staging only.
+
 ## Unreleased — P0 dropdown safety (25 November 2026)
 
 - Reject ambiguous, hidden and disabled choices; verify selected option identity after events; report uncertain results instead of false success. [Tests and limits](docs/p0-select-guard-staging.md). Staging only.
