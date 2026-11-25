@@ -6,6 +6,8 @@
 
 ## Latest attended preview: 0.7.28 — P0 reliability + P1 Portal Bridge
 
+**Unreleased P0 dropdown safety (25 November 2026, staging only):** [Safe dropdown selection](docs/p0-select-guard-staging.md) stops on ambiguous or disabled options and checks that the requested option remains selected. Not in public 0.7.28; installed-extension acceptance pending.
+
 **Unreleased P0 — staging only:** [DOM edit guard](docs/p0-dom-edit-staging.md) refuses unsafe writes after editability/focus changes or native value rejection. Isolated Chromium tests passed; live acceptance pending, not included in 0.7.28.
 
 **Unreleased P0 Portal Bridge replay safety (25 November 2026):** [Replay scope and verification](docs/p0-portal-replay-staging.md) — current grants and document context checked before cached apply; status is historical. Staging only, not in 0.7.28.
