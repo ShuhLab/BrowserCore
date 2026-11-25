@@ -17,7 +17,7 @@ The latest **signed automatic-update feed is 0.7.27**. This newer 0.7.28 build i
 
 ## Historical attended preview: 0.7.26
 
-**0.7.26** introduces delegated same-origin child-tab access, available as a separately installed beta for [Mac](https://browser.m2g.pro/downloads/BrowserCore-Mac-OneClick-0.7.26-beta.zip), [Chrome](https://browser.m2g.pro/downloads/BrowserCore-Extension-0.7.26.zip), and [Linux](https://browser.m2g.pro/downloads/BrowserCore-Linux-BYO-0.7.26-beta.tar.gz). This release requires explicit, per-site browser permission. The owner Mac has not completed real acceptance. **Automatic signed updates remain at 0.7.23**, not 0.7.26.
+**0.7.26** introduces delegated same-origin child-tab access, available as a separately installed beta for [Mac](https://browser.m2g.pro/downloads/BrowserCore-Mac-OneClick-0.7.26-beta.zip), [Chrome](https://browser.m2g.pro/downloads/BrowserCore-Extension-0.7.26.zip), and [Linux](https://browser.m2g.pro/downloads/BrowserCore-Linux-BYO-0.7.26-beta.tar.gz). This release requires explicit, per-site browser permission. The owner Mac has not completed real acceptance. **At the time of that preview, the legacy v2 feed offered 0.7.23.**
 
 ## Current signed beta releases
 
@@ -33,7 +33,7 @@ The latest **signed automatic-update feed is 0.7.27**. This newer 0.7.28 build i
 
 ## Signed automatic updates (new)
 
-**Mac and Linux:** a compatible installation enables a user-level updater. The signed v2 feed currently offers 0.7.23. Preview 0.7.26 requires an attended installation; the server-triggered v3 signed channel has not been activated. It checks the fixed Browser Core HTTPS origin every two hours, verifies a pinned **Ed25519 signature**, checks exact ZIP/TAR SHA-256 and size, validates source paths/permissions and stages the next immutable version. It applies only when the worker reports no active sessions, no shared tabs and no in-flight jobs; otherwise the update is deferred. Mac shows auto-update on/off and a manual check in its menu bar. Linux uses a `systemd --user` timer.
+**Mac and Linux:** a compatible installation enables a user-level updater. The signed v2 feed currently offers 0.7.23; v3 offers 0.7.27. Both signatures were verified on 25 November 2026. The attended 0.7.28 preview and unreleased P0 isolation correction are not distributed through those feeds. It checks the fixed Browser Core HTTPS origin every two hours, verifies a pinned **Ed25519 signature**, checks exact ZIP/TAR SHA-256 and size, validates source paths/permissions and stages the next immutable version. It applies only when the worker reports no active sessions, no shared tabs and no in-flight jobs; otherwise the update is deferred. Mac shows auto-update on/off and a manual check in its menu bar. Linux uses a `systemd --user` timer.
 
 The unpacked Chrome extension includes a local version-file watcher. After the updater installs a signed release, it reloads its own files. **Older extensions cannot install this watcher themselves**: the one-time bootstrap is required. An older installed extension may remain loaded from Downloads instead of the managed folder. Do not interrupt a live task just to align version numbers.
 
@@ -82,7 +82,7 @@ Commands to the *same* authorized tab now execute sequentially; commands to diff
 
 The owner confirmed agent and Chrome extension **0.7.22** on the same Mac, including an explicitly granted Instagram tab, connected tab audio, and a 20-second audio fragment at the ready state. Server-side speech transcription through this MCP client is **not yet verified**. The user's video must be unmuted in the webpage; the Mac output volume can be zero. No microphone or passive recording is used. 
 
-Automatic updating remains separate from the attended preview: the **signed v2 feed currently advertises 0.7.23**, not 0.7.26. See [current release](docs/current-release.md).
+Automatic updating remains separate from the latest attended preview: **v2 advertises 0.7.23 and v3 advertises 0.7.27**. See [current release](docs/current-release.md).
 
 ## Pricing and free beta roadmap — 19 November 2026
 
