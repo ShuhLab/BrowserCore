@@ -46,3 +46,7 @@ Before public availability, validate against two **owned, consenting test accoun
 
 
 > **Unreleased P1 safety follow-up:** [document/route context binding](p1-portal-context-staging.md) is tested in staging only. In the current 0.7.28 preview, inspect both actual accounts and re-preview after navigation or reload; do not rely on matching path alone. Do not retry uncertain writes.
+
+
+**Unreleased P0 native connection isolation (25 November 2026, staging only):** [Connection-bound commands and results](p0-native-port-isolation-staging.md) reject stale messages after reconnect. Mocked tests passed; installed-extension restart and uncertain-outcome reconciliation remain pending. Not in 0.7.28.
+
