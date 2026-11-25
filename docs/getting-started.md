@@ -24,6 +24,8 @@ Download [Windows standalone 0.8.5-beta](https://browser.m2g.pro/downloads/Brows
 
 ## Modes and consent
 
+Browser Core connects only the Chrome tabs you authorize to ChatGPT or Claude for website actions. If a shared tab reconnects during preparation of an order or other draft, inspect its actual contents before retrying any uncertain action. The [unreleased grant-scope safeguard](p0-native-grant-scope-staging.md) is staging-only; it is not available in 0.7.28.
+
 Always check `execution_status` and `execution_options`, reuse a suitable live session/approved tab and avoid opening duplicates. Local and BYO use the user's resources; Cloud is limited and ephemeral. A task may include multiple ordinary sends without a new confirmation for every message. Draft-only, stop and no-send instructions remain binding. Never retry an uncertain send automatically.
 
 Users enter passwords, OAuth, 2FA and CAPTCHA in their own browser during handoff, not in chat. Browser-to-server secret transfer is not shipped. Card and Stars checkout are not yet open.
