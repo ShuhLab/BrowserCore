@@ -56,3 +56,17 @@ No new permissions, no real user profile or submission tested. Bounded 450 ms ob
 ## Demand
 [agent-browser #1928](https://github.com/vercel-labs/agent-browser/issues/1928), 18 September 2026: ambiguous dropdown options. [Playwright #4921](https://github.com/microsoft/playwright/issues/4921), 6 January 2021: historical dynamic-select failure. Alternatives include Playwright locator.selectOption and official portal APIs where available. The competitor's current release notes also describe ambiguity guards; this is essential safety parity, not evidence of unique demand or willingness to pay.
 
+
+
+## P0 tab queue lifecycle — verified staging correction
+
+
+- [agent-browser #2736, 24 November 2026](https://github.com/vercel-labs/agent-browser/issues/2736) — long-lived macOS session memory growth, issue listing.
+- [Playwright MCP #1636, 27 May 2026](https://github.com/microsoft/playwright-mcp/issues/1636) — long-running memory pressure; closed as not planned.
+- [agent-browser #1536, 12 July 2026](https://github.com/vercel-labs/agent-browser/issues/1536) — cleanup after interrupted integrations; different mechanism.
+These are independent technical reports, not evidence of identical root causes or market size. Developers and long-running business operators benefit from reliability. Alternatives: explicit session cleanup, approved portal API where available, Playwright or agent-browser. P0, small correction, included in base access; no willingness-to-pay data. Respect existing user grants; never close the owner's tabs to reclaim locks.
+
+### Next verification
+[Playwright #41837, 17 July 2026](https://github.com/microsoft/playwright/issues/41837) (closed): manually dismissed dialogs could leave phantom modal state. [Playwright documentation](https://playwright.dev/docs/dialogs) explains modal blocking. Browser Core currently marks native timeouts uncertain; its queue can advance after a timeout while the extension may still be executing. This requires isolated late-result testing, not automatic confirmation or retries. Not yet fixed or reproduced end-to-end.
+
+Local commit `4227867`; 1,000 retained idle locks before correction, zero after; four new tests passed. [Details](p0-tab-lock-lifecycle-staging.md).
