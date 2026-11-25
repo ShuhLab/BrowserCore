@@ -1,3 +1,7 @@
+## Unreleased — P0 DOM edit guard (25 November 2026)
+
+- Reject protected or changed inputs, maxlength overflow and native value rejection before live writes. [Tests and limitations](docs/p0-dom-edit-staging.md). Staging only.
+
 ## Unreleased — P0 Portal Bridge replay scope (25 November 2026)
 
 - Require active consent and ancestor lineage on both tabs for cached apply and status; recheck document identity and stop on uncertainty after final fill. [Tests and limitations](docs/p0-portal-replay-staging.md). Staging only.
