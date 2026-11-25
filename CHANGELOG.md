@@ -1,3 +1,7 @@
+## Unreleased — P0 dropdown safety (25 November 2026)
+
+- Reject ambiguous, hidden and disabled choices; verify selected option identity after events; report uncertain results instead of false success. [Tests and limits](docs/p0-select-guard-staging.md). Staging only.
+
 ## Unreleased — P0 DOM edit guard (25 November 2026)
 
 - Reject protected or changed inputs, maxlength overflow and native value rejection before live writes. [Tests and limitations](docs/p0-dom-edit-staging.md). Staging only.
