@@ -6,6 +6,9 @@
 
 ## Latest attended preview: 0.7.28 — P0 reliability + P1 Portal Bridge
 
+**Unreleased P0 confirmed pause (25 November 2026, staging only):** [Pause acknowledgement after grant refresh](docs/p0-pause-reannounce-staging.md) blocks subsequent queued fills in the simulated native bridge. Not in 0.7.28; installed Chrome/Mac unverified. Three historical updater tests still fail.
+
+
 **Unreleased P0 native grant scope (25 November 2026, staging only):** [Queued-command binding](docs/p0-native-grant-scope-staging.md) prevents queued actions crossing a changed grant and treats late results as uncertain. Three pre-existing historical updater tests still fail; real Chrome acceptance pending. Not in 0.7.28.
 
 **Unreleased P0 tab access withdrawal (25 November 2026, staging only):** [Immediate withdrawal guard](docs/p0-revoke-atomic-staging.md) prevents new commands during access cleanup and stale grant announcements; already dispatched actions may still finish. Not in 0.7.28; installed-extension verification pending.
