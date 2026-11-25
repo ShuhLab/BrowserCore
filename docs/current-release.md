@@ -1,5 +1,8 @@
 # Current release — 25 November 2026
 
+**Unreleased P0 confirmed pause:** [Staging correction and limits](p0-pause-reannounce-staging.md). Three simulation cases pass; not in the attended or signed releases. Installed Chrome/Mac unverified.
+
+
 **Latest attended preview:** Mac/Chrome/Linux **0.7.28-beta**, with P0 operation receipts and P1 Portal Bridge draft-only text transfer. [Mac](https://browser.m2g.pro/downloads/BrowserCore-Mac-OneClick-0.7.28-beta.zip) · [Chrome](https://browser.m2g.pro/downloads/BrowserCore-Extension-0.7.28.zip) · [Linux](https://browser.m2g.pro/downloads/BrowserCore-Linux-BYO-0.7.28-beta.tar.gz). See [preview usage and limitations](p0-p1-portal-bridge-preview.md). Full live owner-Mac acceptance is pending.
 
 **Verified 25 November 2026:** the legacy signed **v2** update feed remains **0.7.23-beta**; the newer signed **v3** feed offers **0.7.27-beta**. Both Ed25519 signatures were verified against the pinned public key. The default download manifest still lists 0.7.23 for Mac/Linux/Chrome. The separately installed 0.7.28 technical preview is not in the signed feed. [Unreleased P0 correction](p0-delegated-tab-isolation-staging.md) is staging-only; it is not part of 0.7.28. Historical descriptions below refer to the dates of those previews, not the current channel state.
