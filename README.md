@@ -6,6 +6,8 @@
 
 ## Latest attended preview: 0.7.28 — P0 reliability + P1 Portal Bridge
 
+**Unreleased P0 native connection isolation (25 November 2026, staging only):** [Connection-bound commands and results](docs/p0-native-port-isolation-staging.md) reject stale messages after reconnect. Mocked tests passed; installed-extension restart and uncertain-outcome reconciliation remain pending. Not in 0.7.28.
+
 **Unreleased P0 browser command overlap guard (25 November 2026, staging only):** [Same-tab command isolation](docs/p0-native-single-flight-staging.md) rejects overlapping remote commands while a previous handler is active. Installed-extension timeout/restart verification pending; not in 0.7.28.
 
 **Unreleased P0 tab queue lifecycle (25 November 2026, staging only):** [Idle lock cleanup](docs/p0-tab-lock-lifecycle-staging.md) eliminates retained queue locks in isolated churn tests. Not in 0.7.28; Mac endurance test pending.
