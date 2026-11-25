@@ -1,3 +1,7 @@
+## Unreleased — P0 immediate tab access withdrawal (25 November 2026)
+
+- Invalidate tab consent before asynchronous cleanup; reject stale verification. [Tests and limitations](docs/p0-revoke-atomic-staging.md). Staging only, not in 0.7.28.
+
 ## Unreleased — P0 native connection isolation (25 November 2026)
 
 - Bind requests and late results to the original native connection; ignore stale disconnects and stop dispatch if the connection changes during verification. [Tests and limitations](docs/p0-native-port-isolation-staging.md). Staging only; not in 0.7.28.
