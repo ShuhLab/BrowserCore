@@ -1,3 +1,7 @@
+## Unreleased — P0 receipt scope (25 November 2026)
+
+- Cached replay and receipt lookup respect current consent, pause, credential handoff and parent lineage. Corrupt or failed results cannot claim verified success. [Tests and limitations](docs/p0-receipt-scope-staging.md). Staging only.
+
 ## Unreleased — P1 Portal Bridge context binding (25 November 2026)
 
 - Prevent stale draft writes after a changed document or URL, including query/fragment changes. Recheck grants and connection after asynchronous reads, block concurrent cancellation and expired queued applies. [Tests and limitations](docs/p1-portal-context-staging.md). Staging only; not included in 0.7.28.
