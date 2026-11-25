@@ -1,3 +1,11 @@
+## 0.7.28-beta (attended preview) — 25 November 2026
+
+- **P0:** Metadata-only local action/event journal and operation receipt lookup. Unknown outcomes are never automatically retried. Native child-tab pause state is synchronized with parent takeover; reconnect and disconnect counters are available on an already shared tab.
+- **P1 Portal Bridge phase 1:** Two independently user-shared HTTPS tabs can exchange up to 12 explicitly mapped visible text fields. Preview returns a short-lived plan with field lengths, no field contents. Apply rechecks the source fingerprint and uses existing idempotent, verified field filling. Submission is never performed.
+- **P1 files (inspection only):** Read-only file picker status returns count, total selected bytes and broad image/video/other categories; no filenames, file contents or uploads.
+- **Safety and limitations:** Does not copy binary photo/video, select files, publish forms, bypass CAPTCHA or switch sites without consent. Real Mac two-portal acceptance is still outstanding.
+- [Public preview packages and documentation](docs/p0-p1-portal-bridge-preview.md). The signed auto-update channel remains at 0.7.27-beta.
+
 ## 0.7.26-beta (attended preview) — 20 November 2026
 
 - Same-origin child tabs opened by an agent action inherit the parent's explicitly approved site scope, including a new child handle for subsequent MCP work.
