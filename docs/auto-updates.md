@@ -1,5 +1,9 @@
 # Signed Browser Core beta updates
 
+**Verified 25 November 2026:** the legacy signed **v2** update feed remains **0.7.23-beta**; the newer signed **v3** feed offers **0.7.27-beta**. Both Ed25519 signatures were verified against the pinned public key. The default download manifest still lists 0.7.23 for Mac/Linux/Chrome. The separately installed 0.7.28 technical preview is not in the signed feed. [Unreleased P0 correction](p0-delegated-tab-isolation-staging.md) is staging-only; it is not part of 0.7.28. Historical descriptions below refer to the dates of those previews, not the current channel state.
+
+
+
 **Published client packages:** Mac 0.7.23-beta (signed update + attended installer), extension 0.7.23, Linux 0.7.23-beta, Windows standalone 0.8.5-beta.
 
 The current signed v2 feed **now offers 0.7.23-beta**:
