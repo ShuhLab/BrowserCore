@@ -1,3 +1,7 @@
+## Unreleased — P0 Portal Bridge replay scope (25 November 2026)
+
+- Require active consent and ancestor lineage on both tabs for cached apply and status; recheck document identity and stop on uncertainty after final fill. [Tests and limitations](docs/p0-portal-replay-staging.md). Staging only.
+
 ## Unreleased — P0 receipt scope (25 November 2026)
 
 - Cached replay and receipt lookup respect current consent, pause, credential handoff and parent lineage. Corrupt or failed results cannot claim verified success. [Tests and limitations](docs/p0-receipt-scope-staging.md). Staging only.
