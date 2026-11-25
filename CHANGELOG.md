@@ -1,3 +1,7 @@
+## Unreleased — P0 browser command overlap guard (25 November 2026)
+
+- Refuse overlapping remote commands on the same physical Chrome tab while the earlier handler has not settled; no automatic retry or cancellation. [Tests and limits](docs/p0-native-single-flight-staging.md). Staging only; not in 0.7.28.
+
 ## Unreleased — P0 tab queue lifecycle (25 November 2026)
 
 - Release idle per-tab command locks when the last queued command exits; preserve serialization. [Tests and limitations](docs/p0-tab-lock-lifecycle-staging.md). Staging only.
