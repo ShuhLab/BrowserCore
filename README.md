@@ -6,6 +6,9 @@
 
 ## Latest attended preview: 0.7.28 — P0 reliability + P1 Portal Bridge
 
+**Next P0 correction — staging only (25 November 2026):** [Delegated-tab pause/revoke isolation](docs/p0-delegated-tab-isolation-staging.md) preserves a manual child pause during a parent resume and rejects missing ancestor grants. Mocked tests passed; live Chrome acceptance and packaging are pending. This is not included in the 0.7.28 download.
+
+
 **New attended preview 0.7.28 (25 November 2026):** [Mac](https://browser.m2g.pro/downloads/BrowserCore-Mac-OneClick-0.7.28-beta.zip) · [Chrome extension](https://browser.m2g.pro/downloads/BrowserCore-Extension-0.7.28.zip) · [Linux](https://browser.m2g.pro/downloads/BrowserCore-Linux-BYO-0.7.28-beta.tar.gz).
 
 The P0 stage adds local, redacted operation receipts and reconnect diagnostics; the P1 Portal Bridge stage can preview and fill selected text fields between **two independently user-authorized tabs** with fingerprint validation and verified draft readback. No automated submit, file transfer, media upload, or payment. [Implementation, limitations, and exact tool usage](docs/p0-p1-portal-bridge-preview.md).
