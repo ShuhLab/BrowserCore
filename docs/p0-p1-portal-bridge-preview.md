@@ -44,3 +44,5 @@ Before public availability, validate against two **owned, consenting test accoun
 
 > **Unreleased follow-up, 25 November 2026:** [P0 delegated-tab isolation correction](p0-delegated-tab-isolation-staging.md) is undergoing staging acceptance. It is not part of 0.7.28. Do not treat staged pause/revoke behavior as released.
 
+
+> **Unreleased P1 safety follow-up:** [document/route context binding](p1-portal-context-staging.md) is tested in staging only. In the current 0.7.28 preview, inspect both actual accounts and re-preview after navigation or reload; do not rely on matching path alone. Do not retry uncertain writes.
