@@ -1,3 +1,7 @@
+## Unreleased — P0 delegated-tab isolation (25 November 2026)
+
+- Preserve manually paused children across root resume and restart; reject operations with invalid ancestors and cascade native revocation. Wait for authoritative extension state before resuming. Staging tests passed; not included in released packages. [Verification and limitations](docs/p0-delegated-tab-isolation-staging.md).
+
 ## 0.7.28-beta (attended preview) — 25 November 2026
 
 - **P0:** Metadata-only local action/event journal and operation receipt lookup. Unknown outcomes are never automatically retried. Native child-tab pause state is synchronized with parent takeover; reconnect and disconnect counters are available on an already shared tab.
