@@ -4,6 +4,8 @@
 
 **Verified 25 November 2026:** the legacy signed **v2** update feed remains **0.7.23-beta**; the newer signed **v3** feed offers **0.7.27-beta**. Both Ed25519 signatures were verified against the pinned public key. The default download manifest still lists 0.7.23 for Mac/Linux/Chrome. The separately installed 0.7.28 technical preview is not in the signed feed. [Unreleased P0 correction](p0-delegated-tab-isolation-staging.md) is staging-only; it is not part of 0.7.28. Historical descriptions below refer to the dates of those previews, not the current channel state.
 
+**Unreleased P0 native grant scope:** [Queued-command binding](p0-native-grant-scope-staging.md), simulation only; not in 0.7.28. Three historical updater tests remain failing and installed-extension verification is pending.
+
 **Unreleased P0 follow-up:** [Immediate tab access withdrawal](p0-revoke-atomic-staging.md); staging tests only, not in 0.7.28. Installed-extension verification pending.
 
 **Unreleased P1 follow-up:** [Portal Bridge context correction](p1-portal-context-staging.md) is staging-only and not part of 0.7.28. Live Chrome acceptance remains pending.
