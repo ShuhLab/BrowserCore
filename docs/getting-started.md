@@ -1,12 +1,12 @@
 # Get started with Browser Core
 
-Website: https://browser.m2g.pro/ — current versions and checksums in [RELEASE.json](../RELEASE.json).
+Website: https://browser.m2g.pro/ — use [current release notes](current-release.md) to distinguish the default manifest, signed updates and attended preview. **Verified 25 November 2026:** the legacy signed **v2** update feed remains **0.7.23-beta**; the newer signed **v3** feed offers **0.7.27-beta**. Both Ed25519 signatures were verified against the pinned public key. The default download manifest still lists 0.7.23 for Mac/Linux/Chrome. The separately installed 0.7.28 technical preview is not in the signed feed. [Unreleased P0 correction](p0-delegated-tab-isolation-staging.md) is staging-only; it is not part of 0.7.28. Historical descriptions below refer to the dates of those previews, not the current channel state.
 
 Connect `https://m2g.pro/browser-core/mcp` via OAuth in **ChatGPT or Claude**. The same verified Telegram login grants access to the same Browser Core account and paired devices. For a new worker, use a separate one-time pairing code; do not recreate an existing worker.
 
 ## Mac
 
-1. Download [Mac 0.7.22-beta](https://browser.m2g.pro/downloads/BrowserCore-Mac-OneClick-0.7.22-installer-beta.zip). Extract and run `Install Browser Core.app`. This is unsigned beta software; do not disable macOS security globally.
+1. Download [default Mac 0.7.23-beta](https://browser.m2g.pro/downloads/BrowserCore-Mac-OneClick-0.7.23-beta.zip). Extract and run `Install Browser Core.app`. This is unsigned beta software; do not disable macOS security globally.
 2. It preserves pairing/profiles and installs a user-level signed-update check. Approve a restart only when ready to interrupt a live browser.
 3. Chrome → chrome://extensions → Load unpacked. Choose `~/Library/Application Support/BrowserCore/Extension` or the extension-only extracted folder containing `manifest.json`.
 4. Permit only the desired tabs in the popup. The extension shows only connected tabs.
@@ -16,7 +16,7 @@ An older Mac 0.7.12-beta agent still works with extension 0.7.14; there is no re
 
 ## Linux
 
-Review https://browser.m2g.pro/downloads/install-linux.sh and execute it as an unprivileged user. It installs worker 0.7.21-beta, pins the package SHA-256, and creates a `systemd --user` updater timer. Existing desktop Chrome tabs are not attached by this package.
+Review https://browser.m2g.pro/downloads/install-linux.sh and execute it as an unprivileged user. It installs worker 0.7.23-beta, pins the package SHA-256, and creates a `systemd --user` updater timer. Existing desktop Chrome tabs are not attached by this package.
 
 ## Windows
 
@@ -38,4 +38,4 @@ Open a short video in an explicitly authorized Chrome tab. In Browser Core's pop
 
 If Chrome still shows 0.7.19, inspect the unpacked-extension source directory. Loading it from an old Downloads folder does not receive the managed update. Use `~/Library/Application Support/BrowserCore/Extension`, with a fresh tab grant if Chrome resets the previous permission.
 
-The signed v2 updater currently advertises 0.7.21; Mac 0.7.22 requires the attended installer. Windows remains a separate standalone beta.
+Historical 0.7.22 audio instructions above do not represent current package versions. Signed v2 advertises 0.7.23 and v3 advertises 0.7.27; Windows remains a separate standalone beta.
