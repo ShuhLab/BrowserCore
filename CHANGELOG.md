@@ -1,3 +1,7 @@
+## Unreleased — RC2 conservative tab recovery (26 November 2026)
+
+Browser Core connects user-authorized Chrome tabs to ChatGPT or Claude for website actions. In private RC2 staging, recovery now stops when the original tab cannot be identified unambiguously. Select and authorize the intended tab again instead of continuing in another one. Same-browser reload and full restart have separate checks. No new permissions; not part of 0.7.28 or the signed channel. 134 Python tests and 76 JavaScript cases (7 suites) passed in isolated fixtures. Installed Chrome/Mac and full installer rollback remain unverified. [Details](docs/p1-portal-context-staging.md#26-november-2026--conservative-tab-recovery-private-rc2).
+
 ## Unreleased — RC2 Portal Bridge record guard (26 November 2026)
 
 **Private staging only — Portal Bridge record guard (26 November 2026):** Browser Core connects user-authorized Chrome tabs to ChatGPT or Claude for website actions. A portal can change the displayed order without changing its URL. The RC2 prototype can check an explicitly confirmed visible order/record label before preparing a text draft and stop on a mismatch. This is not in 0.7.28 or the signed channel. No submission, files, payment, or new permissions; real Mac/native acceptance and full installer rollback are still pending. [Evidence, example and limits](docs/p1-portal-context-staging.md).
