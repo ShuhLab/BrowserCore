@@ -14,3 +14,5 @@ Not yet finished:
 Existing user devices and sessions are not force-updated merely by publishing a signed beta.
 
 - **Parallel-tab command scheduling**: implemented in Mac beta 0.7.19 with a per-tab serial queue; owner-configurable multi-worker concurrency and resource metering remain future work.
+
+- P1 release gate: explicit record-label guard in private RC2 staging only; verify real native Chrome/Mac path, existing unguarded workflow restrictions and full installer rollback before release. [Proof](p1-portal-context-staging.md).
