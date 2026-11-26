@@ -1,5 +1,7 @@
 # Browser Core 0.7.28 — P0 reliability and P1 Portal Bridge (attended preview)
 
+**Limit:** A same-document order/account switch at an identical URL can evade document-context checks. Inspect the actual business record and avoid forms that may autosave. The experimental record guard is **not included** in this attended preview. [Staging evidence and limits](p1-portal-context-staging.md).
+
 **Status as of 25 November 2026:** source implemented in a separate staging build, packaged and tested. This is an **attended, unsigned/not-notarized Mac beta**. The current signed auto-update channel still distributes **0.7.27-beta**. This is NOT a general-availability rollout, not yet independently security audited, and no real seller-portal acceptance has been completed.
 
 Downloads with independent SHA-256 check files:
