@@ -170,3 +170,7 @@ Known at that release: unsigned/notarized Mac app, Python prerequisite, manual e
 - Two live isolated Chromium workers passed fairness and cleanup verification
 - 10-language site showed live aggregate queue size and public limitations
 - Multi-node autoscaling and paid checkout remained unavailable
+
+
+### 26 November 2026 — private RC2: exact native draft values
+Browser Core connects user-authorized Chrome tabs to ChatGPT or Claude for website actions. When transferring a reference into a form, an invisible character can make a different identifier. In private staging commit `1467926c44fbaee875cf5debcaf2af2edf9d66fd`, native inputs and textareas require exact value equality before declaring a draft unchanged or verified; if a page rewrites the value, review is required. Rich-text editors retain visual normalization. Browser validity constraints, server acceptance, autosave and actual submission are not verified by this correction. Eight new isolated Chromium cases passed (45 total DOM cases); 139 Python tests and seven JavaScript suites passed. Unsigned private Mac RC2, 526732 bytes, SHA256 `ad785c241e67449eea14b86ba4cccc5a7b70a1cbdc47c4801f50ebd73c4678f0`, reproducible twice. Prior private archive retained separately; signed feed and attended preview unchanged. No public download, additional permissions or new MCP tools. Isolated Mac installation and full rollback remain pending. See [RC2 staging notes](https://github.com/ShuhLab/BrowserCore/blob/main/docs/mac-0729-rc2-preflight-staging.md).
