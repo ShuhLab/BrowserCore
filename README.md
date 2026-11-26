@@ -6,6 +6,8 @@
 
 ## Latest attended preview: 0.7.28 — P0 reliability + P1 Portal Bridge
 
+**Unreleased Mac 0.7.29 RC2 follow-up (26 November 2026):** Browser Core connects authorized Chrome tabs to ChatGPT or Claude. The private staging installer now asks before switching an existing installation; Later or a failed dialog defers activation, and an unverified post-restart connection no longer reports success. 120 Python tests and seven JS suites passed in isolated fixtures; no new archive, full rollback or real Mac acceptance. [Details and limits](docs/mac-0729-rc2-preflight-staging.md).
+
 **Unreleased Mac 0.7.29 RC2 (26 November 2026):** [Installer preflight](docs/mac-0729-rc2-preflight-staging.md) preserves the active release until candidate dependency and smoke checks pass in isolated tests. 115 Python and 66 JS tests pass; post-activation rollback and real Mac acceptance are pending. Historical three updater test failures were addressed in the consolidated candidate without relaxing the permission gate. Do not install RC2 on a working profile.
 
 **Unreleased P0 confirmed pause (25 November 2026, staging only):** [Pause acknowledgement after grant refresh](docs/p0-pause-reannounce-staging.md) blocks subsequent queued fills in the simulated native bridge. Not in 0.7.28; installed Chrome/Mac unverified. Three historical updater tests still fail.
