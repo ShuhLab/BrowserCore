@@ -1,3 +1,7 @@
+## Unreleased — Mac 0.7.29 RC2 activation guard (26 November 2026)
+
+- Ask before selecting candidate or rewriting native/launchd assets; defer on cancellation or dialog failure. Do not report installation success after unverified transport. [Tests and limits](docs/mac-0729-rc2-preflight-staging.md). Private staging only; full rollback and Mac acceptance pending.
+
 ## Unreleased — Mac 0.7.29 RC2 installer preflight (26 November 2026)
 
 - Check existing dependencies without mutating the shared runtime, and run candidate platform/browser checks before switching the active symlink. [Tests and limitations](docs/mac-0729-rc2-preflight-staging.md). No real Mac acceptance or complete rollback yet. No release.
