@@ -1,5 +1,7 @@
 ## Unreleased — Mac 0.7.29 RC2 activation guard (26 November 2026)
 
+**Unreleased Mac 0.7.29 RC2 release identity (26 November 2026):** Browser Core connects user-authorized Chrome tabs to ChatGPT or Claude for website actions. The private staging installer rejects same-version directories with different or missing source/assets, unexpected files or symlinks before activation; it does not overwrite the previous code. 124 Python tests and seven JavaScript suites passed in Linux fixtures. No new archive, no real Mac acceptance; full post-activation rollback and installer/updater coordination remain pending. Not released. [Details and limits](docs/mac-0729-rc2-preflight-staging.md).
+
 - Ask before selecting candidate or rewriting native/launchd assets; defer on cancellation or dialog failure. Do not report installation success after unverified transport. [Tests and limits](docs/mac-0729-rc2-preflight-staging.md). Private staging only; full rollback and Mac acceptance pending.
 
 ## Unreleased — Mac 0.7.29 RC2 installer preflight (26 November 2026)
