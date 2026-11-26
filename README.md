@@ -1,5 +1,7 @@
 # Browser Core — your browser, under your control
 
+**Private staging only — Portal Bridge record guard (26 November 2026):** Browser Core connects user-authorized Chrome tabs to ChatGPT or Claude for website actions. A portal can change the displayed order without changing its URL. The RC2 prototype can check an explicitly confirmed visible order/record label before preparing a text draft and stop on a mismatch. This is not in 0.7.28 or the signed channel. No submission, files, payment, or new permissions; real Mac/native acceptance and full installer rollback are still pending. [Evidence, example and limits](docs/p1-portal-context-staging.md).
+
 **Unreleased Mac 0.7.29 RC2 release identity (26 November 2026):** Browser Core connects user-authorized Chrome tabs to ChatGPT or Claude for website actions. The private staging installer rejects same-version directories with different or missing source/assets, unexpected files or symlinks before activation; it does not overwrite the previous code. 124 Python tests and seven JavaScript suites passed in Linux fixtures. No new archive, no real Mac acceptance; full post-activation rollback and installer/updater coordination remain pending. Not released. [Details and limits](docs/mac-0729-rc2-preflight-staging.md).
 
 **ChatGPT and Claude** can automate individually authorized Chrome tabs, a personal Linux VPS or limited Hosted Cloud via [Browser Core MCP](https://m2g.pro/browser-core/mcp). Users may intervene for logins, CAPTCHA and 2FA.
