@@ -1,3 +1,7 @@
+## Unreleased — Mac 0.7.29 RC2 installer preflight (26 November 2026)
+
+- Check existing dependencies without mutating the shared runtime, and run candidate platform/browser checks before switching the active symlink. [Tests and limitations](docs/mac-0729-rc2-preflight-staging.md). No real Mac acceptance or complete rollback yet. No release.
+
 ## Unreleased — P0 confirmed pause after grant refresh (25 November 2026)
 
 - Apply a confirmed pause to the current entry of the original grant, not an obsolete object. [Tests and limitations](docs/p0-pause-reannounce-staging.md). Staging only; no new permissions or automatic retry.
