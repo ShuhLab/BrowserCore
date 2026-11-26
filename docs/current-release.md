@@ -1,5 +1,7 @@
 # Current release — 25 November 2026
 
+**Unreleased Mac 0.7.29 RC2 release identity (26 November 2026):** Browser Core connects user-authorized Chrome tabs to ChatGPT or Claude for website actions. The private staging installer rejects same-version directories with different or missing source/assets, unexpected files or symlinks before activation; it does not overwrite the previous code. 124 Python tests and seven JavaScript suites passed in Linux fixtures. No new archive, no real Mac acceptance; full post-activation rollback and installer/updater coordination remain pending. Not released. [Details and limits](mac-0729-rc2-preflight-staging.md).
+
 **Unreleased Mac 0.7.29 RC2 follow-up (26 November 2026):** Browser Core connects authorized Chrome tabs to ChatGPT or Claude. The private staging installer now asks before switching an existing installation; Later or a failed dialog defers activation, and an unverified post-restart connection no longer reports success. 120 Python tests and seven JS suites passed in isolated fixtures; no new archive, full rollback or real Mac acceptance. [Details and limits](mac-0729-rc2-preflight-staging.md).
 
 **Unreleased P0 confirmed pause:** [Staging correction and limits](p0-pause-reannounce-staging.md). Three simulation cases pass; not in the attended or signed releases. Installed Chrome/Mac unverified.
