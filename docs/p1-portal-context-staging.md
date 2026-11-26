@@ -15,3 +15,12 @@ The existing `portal_preview` / `portal_apply` flow and field mappings remain un
 
 ## Verification and remaining work
 54 Python tests and 60 JavaScript suite cases passed, including six added bridge regressions and five context checks. Four additional cases passed using a real isolated headless Chromium DOM fixture (successful fill, changed query, navigation during beforeinput, and reload). This evaluates the DOM functions in the page, not the installed native extension or real customer data. Native Chrome end-to-end acceptance, packaging and signed release are pending. No commercial activation. No new public feature: this is a correction to the existing preview.
+
+
+## 26 November 2026 — explicit record label guard (private RC2 prototype, not released)
+
+Browser Core connects user-authorized Chrome tabs to ChatGPT or Claude for website actions. An operator preparing a status draft must not fill order B after reviewing order A. The unchanged URL/document context is insufficient: on RC2 a real isolated Chromium fixture switched visible label ORD-001 to ORD-002 and a draft fill still succeeded. No submission occurred. This was not a production incident.
+
+Local staging branch `consolidated-0729-rc2-record-guard`, commit `0126d2ede30294d9f40496ed789d99047467ea7b`, based on `a8157dc`. The prototype accepts an optional `target_record` object in the existing preview JSON, e.g. `"target_record":{"selector":"#order","value":"ORD-001"}` (synthetic example). The user must explicitly confirm the non-secret identifier and the destination tab before use. Only a unique, visible static leaf text label is accepted; editable, hidden, ambiguous or protected labels fail closed. New internal check/fill operations prevent an older extension silently ignoring the guard. Preview, apply, focus, beforeinput, readback and replay are checked; no automatic retry of uncertain results. Existing unguarded plans do NOT verify business record identity. This is not proof of true account identity or protection from site autosave; avoid live status forms until manually verified. No new browser permissions, submission, file handling or payments. No production use of this argument.
+
+133 unittest cases, 37 isolated Chromium fixture scenarios (10 new), seven JS suites passed before the final scope recheck; a focused 36-test rerun passed after it. Full rerun/native extension path and Mac acceptance still to be verified on the final commit; packaging, full installer rollback and signed release remain blocked. No public feature or download.
