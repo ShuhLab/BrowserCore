@@ -6,6 +6,8 @@ Connect `https://m2g.pro/browser-core/mcp` via OAuth in **ChatGPT or Claude**. T
 
 ## Mac
 
+**Unreleased Mac 0.7.29 RC2 follow-up (26 November 2026):** Browser Core connects authorized Chrome tabs to ChatGPT or Claude. The private staging installer now asks before switching an existing installation; Later or a failed dialog defers activation, and an unverified post-restart connection no longer reports success. 120 Python tests and seven JS suites passed in isolated fixtures; no new archive, full rollback or real Mac acceptance. [Details and limits](mac-0729-rc2-preflight-staging.md).
+
 1. Download [default Mac 0.7.23-beta](https://browser.m2g.pro/downloads/BrowserCore-Mac-OneClick-0.7.23-beta.zip). Extract and run `Install Browser Core.app`. This is unsigned beta software; do not disable macOS security globally.
 2. It preserves pairing/profiles and installs a user-level signed-update check. Approve a restart only when ready to interrupt a live browser.
 3. Chrome → chrome://extensions → Load unpacked. Choose `~/Library/Application Support/BrowserCore/Extension` or the extension-only extracted folder containing `manifest.json`.
