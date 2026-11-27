@@ -52,3 +52,6 @@ Before public availability, validate against two **owned, consenting test accoun
 
 **Unreleased P0 native connection isolation (25 November 2026, staging only):** [Connection-bound commands and results](p0-native-port-isolation-staging.md) reject stale messages after reconnect. Mocked tests passed; installed-extension restart and uncertain-outcome reconciliation remain pending. Not in 0.7.28.
 
+
+
+**Source-only staging correction (27 November 2026):** [Unicode-safe page summary](snapshot-unicode-staging.md) prevents malformed UTF-16 in descriptive snapshot output and flags repaired text. 140 Python tests and seven Node test files passed in isolation. Exact draft values unchanged; not in the existing RC2 archive or production. Mac end-to-end validation pending.
