@@ -54,4 +54,4 @@ Before public availability, validate against two **owned, consenting test accoun
 
 
 
-**Source-only staging correction (27 November 2026):** [Unicode-safe page summary](snapshot-unicode-staging.md) prevents malformed UTF-16 in descriptive snapshot output and flags repaired text. 140 Python tests and seven Node test files passed in isolation. Exact draft values unchanged; not in the existing RC2 archive or production. Mac end-to-end validation pending.
+**Private RC2 staging correction (27 November 2026):** [Unicode-safe page summary](snapshot-unicode-staging.md) prevents malformed UTF-16 in descriptive snapshot output and flags repaired text. 140 Python tests and seven Node test files passed in isolation. Exact draft values unchanged; included in a later private unsigned RC2 candidate, not the earlier archive, public downloads or production. Mac end-to-end validation pending.
