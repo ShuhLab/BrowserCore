@@ -76,3 +76,6 @@ On 22 November 2026, a live `existing_tabs_list` check on the owner's connected 
 6. Verify `existing_tabs_list` returns Mac agent **0.7.26-beta**, extension **0.7.26** and the expected tab handles. Exercise a harmless child-tab open, snapshot, pause/resume, then a simulated recovery and explicit revocation. Confirm that unrelated tabs never appear.
 
 **Production acceptance:** do not claim unattended server-push updates until the v3 signed manifest is published by the authorized signing workflow and a real Mac upgrade/reconnect/rollback cycle passes. The 0.7.26 preview does not replace the signed 0.7.23 default.
+
+
+**Source-only staging correction (27 November 2026):** [Unicode-safe page summary](snapshot-unicode-staging.md) prevents malformed UTF-16 in descriptive snapshot output and flags repaired text. 140 Python tests and seven Node test files passed in isolation. Exact draft values unchanged; not in the existing RC2 archive or production. Mac end-to-end validation pending.
