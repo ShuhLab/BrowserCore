@@ -37,3 +37,10 @@ Browser Core connects user-authorized Chrome tabs to ChatGPT or Claude for websi
 ## 28 November 2026 — RC2 private installer integrity QA (not released)
 
 Browser Core connects the Chrome tabs you authorize to ChatGPT or Claude for website actions. When updating the local browser integration, the installer must preserve existing files and reject incomplete candidate assets before copying them. The consolidated private RC2 candidate includes an internal installer-write hardening correction. Six new regression cases, 148 Python tests total, 21 recovery QA cases and seven JavaScript suites passed in isolated Linux fixtures; all 40 packaged payload files match the source inventory. The private archive is unsigned and unnotarized. Full transactional rollback, service recovery and real macOS acceptance remain unverified. Do not install on a working profile. No new public capability, permission, download or signed update; technical details remain private pending safe release.
+
+
+## 28 November 2026 — private RC2 installer update coordination (source only)
+
+Browser Core connects the Chrome tabs you authorize to ChatGPT or Claude for website actions. Starting a manual update while an automatic update is in progress must not switch the same installation concurrently. Local private staging commit `b5410d31d14436cde078b78f5bfa3b62cb3f5636` adds a shared lock before release or service mutations. A busy or unsafe lock defers the installation; no automatic retry. Seven isolated Linux tests passed, including both directions of exclusion; total 156 Python, 21 recovery fixture cases and seven JavaScript suites (76 checks). A temporary unsigned archive passed the build audit and was not retained or distributed. The prior RC2 archive, public preview and signed feed are unchanged.
+
+FAQ: Can I install this now? No. Full transactional rollback, watchdog/repair coordination and actual Mac installation/restart remain unverified. This is a private source-only partial fix, not a released capability. Do not install on a working profile.
