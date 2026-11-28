@@ -1,5 +1,7 @@
 ## Unreleased — RC2 installer coordination (source only)
 
+**28 November 2026 — safety guidance:** Browser Core connects Chrome tabs you authorize to ChatGPT or Claude for website actions. In existing attended previews, leave automatic child-tab access/recovery disabled and authorize each intended tab separately until a verified update is available. Private RC2 testing requires separate authorization for browser-created tabs; the opt-in explicit same-site creation path remains under test. This is not a public release or a change to the signed update channel. [Details and limits](docs/mac-0729-rc2-preflight-staging.md#28-november-2026--private-rc2-independent-tab-authorization).
+
 **Private RC2 source-only QA — 28 November 2026:** Browser Core connects user-authorized Chrome tabs to ChatGPT or Claude for website actions. A private installer change prevents an attended update from proceeding while the automatic updater holds the same lock, and vice versa, in isolated Linux tests. Seven new cases passed; 156 Python, 21 recovery and seven JavaScript suites passed. No new public package, permission or capability. Full rollback and real macOS acceptance remain unverified. [Details and FAQ](docs/mac-0729-rc2-preflight-staging.md#28-november-2026--private-rc2-installer-update-coordination-source-only).
 
 ## Unreleased — RC2 private packaging acceptance (26 November 2026)
@@ -85,7 +87,7 @@ Browser Core connects user-authorized Chrome tabs to ChatGPT or Claude for websi
 ## 0.7.26-beta (attended preview) — 20 November 2026
 
 - Same-origin child tabs opened by an agent action inherit the parent's explicitly approved site scope, including a new child handle for subsequent MCP work.
-- Agent-triggered link popups are scoped by opener tab and a brief command window; site-generated/unrelated popups never inherit access.
+- Historical preview behavior: automatic link-popup association was experimental; see the current safety guidance above.
 - Root pause/revoke/site-permission removal propagates to children; cross-origin navigation does not inherit rights.
 - Optional HTTPS host permission is requested for the **current exact origin**, not enabled for all websites. Audio is always separately consented.
 - Direct child opens now retain URL query/fragment for navigation while persisting only sanitized origin/path.

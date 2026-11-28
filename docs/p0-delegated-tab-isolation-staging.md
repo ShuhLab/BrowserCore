@@ -1,5 +1,7 @@
 # P0 delegated-tab isolation — staging candidate (25 November 2026)
 
+**28 November 2026 — safety guidance:** Browser Core connects Chrome tabs you authorize to ChatGPT or Claude for website actions. In existing attended previews, leave automatic child-tab access/recovery disabled and authorize each intended tab separately until a verified update is available. Private RC2 testing requires separate authorization for browser-created tabs; the opt-in explicit same-site creation path remains under test. This is not a public release or a change to the signed update channel. [Details and limits](mac-0729-rc2-preflight-staging.md#28-november-2026--private-rc2-independent-tab-authorization).
+
 **Not released.** The current attended preview is 0.7.28; the signed v3 feed is 0.7.27-beta. The staging-only follow-up is based on 0.7.28 and does not change the MCP tool schema, permissions, or file transfer.
 
 ## Why

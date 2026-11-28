@@ -1,5 +1,7 @@
 # Mac 0.7.29 RC2 installer preflight — unreleased (26 November 2026)
 
+**28 November 2026 — safety guidance:** Browser Core connects Chrome tabs you authorize to ChatGPT or Claude for website actions. In existing attended previews, leave automatic child-tab access/recovery disabled and authorize each intended tab separately until a verified update is available. Private RC2 testing requires separate authorization for browser-created tabs; the opt-in explicit same-site creation path remains under test. This is not a public release or a change to the signed update channel. [Details and limits](mac-0729-rc2-preflight-staging.md#28-november-2026--private-rc2-independent-tab-authorization).
+
 Browser Core connects Chrome tabs explicitly authorized by their owner to ChatGPT or Claude to perform actions on websites; it is not a separate AI or a replacement browser. When updating Browser Core on a Mac, a failed dependency or browser check should not switch the active installation to an unready candidate.
 
 Local staging branch `consolidated-0729-rc2-preflight`, commit `1aa94149fb3e6a9a78531d1bbaf953d89c26f661`, parent `d98ea57`. Existing shared runtime requirements and pip consistency are checked without installing dependencies or downloading browser binaries. Candidate platform and isolated local browser smoke checks run before switching the current symlink; an incompatible runtime blocks activation and may require separately approved repair. Fresh installation still provisions dependencies before activation.
@@ -44,3 +46,8 @@ Browser Core connects the Chrome tabs you authorize to ChatGPT or Claude for web
 Browser Core connects the Chrome tabs you authorize to ChatGPT or Claude for website actions. Starting a manual update while an automatic update is in progress must not switch the same installation concurrently. Local private staging commit `b5410d31d14436cde078b78f5bfa3b62cb3f5636` adds a shared lock before release or service mutations. A busy or unsafe lock defers the installation; no automatic retry. Seven isolated Linux tests passed, including both directions of exclusion; total 156 Python, 21 recovery fixture cases and seven JavaScript suites (76 checks). A temporary unsigned archive passed the build audit and was not retained or distributed. The prior RC2 archive, public preview and signed feed are unchanged.
 
 FAQ: Can I install this now? No. Full transactional rollback, watchdog/repair coordination and actual Mac installation/restart remain unverified. This is a private source-only partial fix, not a released capability. Do not install on a working profile.
+
+
+## 28 November 2026 — private RC2 independent tab authorization
+
+Private consolidated source `dcf8a6c`: isolated Linux checks passed (156 Python, 21 recovery fixtures, seven Node suites including 22 child-tab checks). Browser-created tabs require separate owner authorization in this private candidate; explicit same-site creation remains opt-in. The candidate is unsigned and has not passed owner-Mac installation or full rollback acceptance. No public binary, signed feed, permissions or tool schema changed. For existing previews disable child delegation and manually authorize each intended tab. Never install an unaccepted candidate on a working profile.
