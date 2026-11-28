@@ -1,3 +1,7 @@
+## Unreleased — RC2 installer coordination (source only)
+
+**Private RC2 source-only QA — 28 November 2026:** Browser Core connects user-authorized Chrome tabs to ChatGPT or Claude for website actions. A private installer change prevents an attended update from proceeding while the automatic updater holds the same lock, and vice versa, in isolated Linux tests. Seven new cases passed; 156 Python, 21 recovery and seven JavaScript suites passed. No new public package, permission or capability. Full rollback and real macOS acceptance remain unverified. [Details and FAQ](docs/mac-0729-rc2-preflight-staging.md#28-november-2026--private-rc2-installer-update-coordination-source-only).
+
 ## Unreleased — RC2 private packaging acceptance (26 November 2026)
 
 **Private RC2 staging — 28 November 2026:** Browser Core connects user-authorized Chrome tabs to ChatGPT or Claude. Its test snapshot now distinguishes the main page from uninspected embedded forms, without reading those forms or changing permissions. 149 Python tests and 7 Node suites passed in Linux; Mac acceptance and installer rollback remain open. Not released. [Scope and limitations](docs/embedded-frame-scope-staging.md).
