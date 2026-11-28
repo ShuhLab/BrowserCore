@@ -1,5 +1,7 @@
 # Browser Core 0.7.28 — P0 reliability and P1 Portal Bridge (attended preview)
 
+**Private RC2 source-only QA — 28 November 2026:** Browser Core connects user-authorized Chrome tabs to ChatGPT or Claude for website actions. A private installer change prevents overlapping manual and automatic updates in isolated Linux tests (156 Python, 21 recovery and seven JavaScript suites). No new download, permission or capability; full rollback and Mac acceptance remain unverified. [Details and FAQ](mac-0729-rc2-preflight-staging.md#28-november-2026--private-rc2-installer-update-coordination-source-only).
+
 **Private RC2 staging — 28 November 2026:** Browser Core connects user-authorized Chrome tabs to ChatGPT or Claude. Its test snapshot now distinguishes the main page from uninspected embedded forms, without reading those forms or changing permissions. 149 Python tests and 7 Node suites passed in Linux; Mac acceptance and installer rollback remain open. Not released. [Scope and limitations](embedded-frame-scope-staging.md).
 
 **Limit:** A same-document order/account switch at an identical URL can evade document-context checks. Inspect the actual business record and avoid forms that may autosave. The experimental record guard is **not included** in this attended preview. [Staging evidence and limits](p1-portal-context-staging.md).
